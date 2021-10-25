@@ -1,4 +1,4 @@
-# URI 1004 - Produto Simples
+# EX 1004 - Produto Simples
 # Python 3.9
 
 A = int(input())

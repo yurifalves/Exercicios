@@ -1,4 +1,4 @@
-# URI #1002 - Área do Círculo
+# EX 1002 - Área do Círculo
 # Python 3.9
 
 pi = 3.14159

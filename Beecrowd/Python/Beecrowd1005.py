@@ -1,4 +1,4 @@
-# URI 1005 - Média 1
+# EX 1005 - Média 1
 # Python 3.9
 
 A = float(input())
