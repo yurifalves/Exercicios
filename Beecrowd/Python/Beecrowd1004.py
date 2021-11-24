@@ -1,4 +1,4 @@
-# EX 1004 - Produto Simples
+# 1004 - Produto Simples
 # Python 3.9
 
 A = int(input())

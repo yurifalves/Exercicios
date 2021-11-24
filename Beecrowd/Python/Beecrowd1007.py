@@ -1,4 +1,4 @@
-# EX 1007 - Média 2
+# 1007 - Média 2
 # Python 3.9
 
 A = int(input())

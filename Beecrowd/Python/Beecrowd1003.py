@@ -1,4 +1,4 @@
-# EX 1003 - Soma Simples
+# 1003 - Soma Simples
 # Python 3.9
 
 A = int(input())

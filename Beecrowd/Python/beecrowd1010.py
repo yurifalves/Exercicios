@@ -1,4 +1,4 @@
-# EX 1010 - Cálculo Simples
+# 1010 - Cálculo Simples
 # Python 3.9
 
 lista_dados1 = input().split()

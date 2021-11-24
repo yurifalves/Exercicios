@@ -1,4 +1,4 @@
-# EX 1008 - Salário
+# 1008 - Salário
 # Python 3.9
 
 num = int(input())

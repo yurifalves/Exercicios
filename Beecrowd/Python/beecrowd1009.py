@@ -1,4 +1,4 @@
-# EX 1009 - Salário com Bônus
+# 1009 - Salário com Bônus
 # Python 3.9
 
 num = int(input())
