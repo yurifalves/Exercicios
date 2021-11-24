@@ -4,19 +4,23 @@ def checkinterval(a, b):
     quais números são primos e quais são compostos.
     :param a: Início do intervalo a ser analisado.
     :param b: Fim do Intervalo a ser analisado.
-    :return: 2 listas, uma com os números primos e outra com os números compostos.
+    :return: 2 listas, uma com os números primos e outra com os números compostos. Abaixo também aparecerá o tempo de execução.
     """
+    from datetime import datetime
+    start_time = datetime.now()
     if a < 0 or a > b:
         return f'alguma condição está sendo violada: a < 0 ou a < b'
-    listaprimos = []
-    listacompostos = []
-    for n in range(a, b+1):
-        cont = 0
-        for t in range(1, n+1):
-            if n % t == 0:
-                cont += 1
-        if cont == 2:
-            listaprimos.append(n)
-        else:
-            listacompostos.append(n)
-        return f'CONSIDERANDO O INTERVALO [{a}, {b}]\nNÚMEROS PRIMOS: {listaprimos}\nNÚMEROS COMPOSTOS: {listacompostos}'
+    else:
+        listaprimos = []
+        listacompostos = []
+        for n in range(a, b+1):
+            cont = 0
+            for t in range(1, n+1):
+                if n % t == 0:
+                    cont += 1
+            if cont == 2:
+                listaprimos.append(n)
+            else:
+                listacompostos.append(n)
+        return f'CONSIDERANDO O INTERVALO [{a}, {b}]\nNÚMEROS PRIMOS: {listaprimos}' \
+               f'\nNÚMEROS COMPOSTOS: {listacompostos}\nTEMPO DE EXECUÇÃO: {datetime.now() - start_time}'
