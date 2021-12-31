@@ -1,6 +1,3 @@
-# 1009 - Salário com Bônus
-# Python 3.9
-
 num = int(input())
 horas = int(input())
 valor_hora = float(input())

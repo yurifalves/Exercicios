@@ -1,6 +1,3 @@
-# 1010 - Cálculo Simples
-# Python 3.9
-
 lista_dados1 = input().split()
 total1 = int(lista_dados1[1])*float(lista_dados1[2])
 lista_dados2 = input().split()

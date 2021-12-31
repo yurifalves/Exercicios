@@ -1,6 +1,3 @@
-# 1006 - Média 2
-# Python 3.9
-
 A = float(input())
 B = float(input())
 C = float(input())

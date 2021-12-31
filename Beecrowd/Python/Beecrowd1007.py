@@ -1,6 +1,3 @@
-# 1007 - Média 2
-# Python 3.9
-
 A = int(input())
 B = int(input())
 C = int(input())

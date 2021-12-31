@@ -1,6 +1,3 @@
-# 1008 - Salário
-# Python 3.9
-
 num = int(input())
 horas = int(input())
 valor_hora = float(input())
