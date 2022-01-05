@@ -1,4 +1,2 @@
-A = int(input())
-B = int(input())
-X = A+B
-print(f'X = {X}')
+t = lambda A, B: int(A) + int(B)
+print(f'X = {t(input(), input())}')
