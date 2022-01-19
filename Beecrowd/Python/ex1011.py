@@ -1,7 +1,5 @@
-pi = 3.14159
-
-
 def area_esf(r):
+    pi = 3.14159
     return (4/3)*pi*r**3
 
 
