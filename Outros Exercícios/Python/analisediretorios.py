@@ -1,14 +1,12 @@
-customizar = {
-    'RED': '\033[1;31m', 'BLUE': '\033[1;34m', 'CYAN': '\033[1;36m', 'GREEN': '\033[0;32m',
-    'BOLD': '\033[;1m', 'REVERSE': '\033[;7m', 'RESET': '\033[0m'
-}
-
-
 def pasta_tamanho(caminho):
     """
-    :param caminho: caminho da pasta a ser pesquisada
-    :return: retorna informações sobre o tamanho de uma pasta
+    :param caminho: Caminho da pasta a ser pesquisada
+    :return: Informações sobre o tamanho de uma pasta, seus diretórios/arquivos
     """
+    customizar = {
+        'RED': '\033[1;31m', 'BLUE': '\033[1;34m', 'CYAN': '\033[1;36m', 'GREEN': '\033[0;32m',
+        'BOLD': '\033[;1m', 'REVERSE': '\033[;7m', 'RESET': '\033[0m'
+    }
     import os
     os.chdir(caminho)
     cont_num_diretorios = cont_num_arquivos = tamanho_total = 0
