@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <locale.h>
-void main() {
+int main() {
     setlocale(LC_ALL, "Portuguese");
     printf("<<< EX002 - Especiais >>>\n\n");
     printf("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n");
@@ -11,4 +11,5 @@ void main() {
     printf("%%%%\t= \tPorcentagem\n");
     printf("\\\?\t= \tInterrogação\n");
     printf("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n");
+    return 0;
 }

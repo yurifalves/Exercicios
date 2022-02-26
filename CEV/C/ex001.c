@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <locale.h>
-void main() {
+int main() {
     setlocale(LC_ALL, "Portuguese");
     printf("<<< EX001 - LISTAGEM >>>\n\n");
     printf("Listagem de Alunos\n");
@@ -11,4 +11,5 @@ void main() {
     printf("Cláudio Sá\t5.5\n");
     printf("Giovana Silva\t7.5\n");
     printf("----------------------\n");
+    return 0;
 }
