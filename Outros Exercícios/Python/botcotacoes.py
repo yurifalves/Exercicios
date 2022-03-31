@@ -70,8 +70,8 @@ def moedasinst(mensagem):
         moeda_name = requisicao_dic["name"][:requisicao_dic["name"].find("/")]
         moeda_code = requisicao_dic["code"]
         preco_compra = round(float(requisicao_dic["bid"]), 2)
-        texto += f'1 {moeda_code} ({moeda_name}) = {str(preco_compra).replace(".", ",")} {requisicao_dic["codein"]}\n{requisicao_dic["create_date"]}\n\n'
-    bot.reply_to(mensagem, texto)
+        texto += f'*1 {moeda_code} ({moeda_name}) = {str(preco_compra).replace(".", ",")} {requisicao_dic["codein"]}*\n{requisicao_dic["create_date"]}\n\n'
+    bot.send_message(mensagem.chat.id, texto, parse_mode='Markdown')
 
 
 @bot.message_handler(func=lambda mensagem: True)
