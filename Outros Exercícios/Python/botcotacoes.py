@@ -7,19 +7,30 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-bot = telebot.TeleBot('5280082287:AAF9zyPYm49sqF2NfwcqGmc01QYWBQqgxDY')
+bot = telebot.TeleBot(TOKEN)
 
 
-moedas_dic = {'USD-BRL': 'Dólar Americano/Real Brasileiro', 'EUR-BRL': 'Euro/Real Brasileiro',
-              'GBP-BRL': 'Libra Esterlina/Real Brasileiro', 'AUD-BRL': 'Dólar Australiano/Real Brasileiro',
-              'CAD-BRL': 'Dólar Canadense/Real Brasileiro', 'NZD-BRL': 'Dólar Neozelandês/Real Brasileiro',
-              'HKD-BRL': 'Dólar de Hong Kong/Real Brasileiro', 'SGD-BRL': 'Dólar de Cingapura/Real Brasileiro',
-              'TWD-BRL': 'Dólar Taiuanês/Real Brasileiro', 'ARS-BRL': 'Peso Argentino/Real Brasileiro',
-              'BOB-BRL': 'Boliviano/Real Brasileiro', 'AED-BRL': 'Dirham dos Emirados/Real Brasileiro',
-              'BTC-BRL': 'Bitcoin/Real Brasileiro', 'CHF-BRL': 'Franco Suíço/Real Brasileiro', 'CLP-BRL': 'Peso Chileno/Real Brasileiro',
-              'CNY-BRL': 'Yuan Chinês/Real Brasileiro', 'COP-BRL': 'Peso Colombiano/Real Brasileiro',
-              'DKK-BRL': 'Coroa Dinamarquesa/Real Brasileiro', 'DOGE-BRL': 'Dogecoin/Real Brasileiro',
-              'ETH-BRL': 'Ethereum/Real Brasileiro', 'ILS-BRL': 'Novo Shekel Israelense/Real Brasileiro',
+moedas_dic = {'USD-BRL': 'Dólar Americano/Real Brasileiro',
+              'EUR-BRL': 'Euro/Real Brasileiro',
+              'GBP-BRL': 'Libra Esterlina/Real Brasileiro',
+              'AUD-BRL': 'Dólar Australiano/Real Brasileiro',
+              'CAD-BRL': 'Dólar Canadense/Real Brasileiro',
+              'NZD-BRL': 'Dólar Neozelandês/Real Brasileiro',
+              'HKD-BRL': 'Dólar de Hong Kong/Real Brasileiro',
+              'SGD-BRL': 'Dólar de Cingapura/Real Brasileiro',
+              'TWD-BRL': 'Dólar Taiuanês/Real Brasileiro',
+              'ARS-BRL': 'Peso Argentino/Real Brasileiro',
+              'BOB-BRL': 'Boliviano/Real Brasileiro',
+              'AED-BRL': 'Dirham dos Emirados/Real Brasileiro',
+              'BTC-BRL': 'Bitcoin/Real Brasileiro',
+              'CHF-BRL': 'Franco Suíço/Real Brasileiro',
+              'CLP-BRL': 'Peso Chileno/Real Brasileiro',
+              'CNY-BRL': 'Yuan Chinês/Real Brasileiro',
+              'COP-BRL': 'Peso Colombiano/Real Brasileiro',
+              'DKK-BRL': 'Coroa Dinamarquesa/Real Brasileiro',
+              'DOGE-BRL': 'Dogecoin/Real Brasileiro',
+              'ETH-BRL': 'Ethereum/Real Brasileiro',
+              'ILS-BRL': 'Novo Shekel Israelense/Real Brasileiro',
               'INR-BRL': 'Rúpia Indiana/Real Brasileiro',
               'JPY-BRL': 'Iene Japonês/Real Brasileiro',
               'LTC-BRL': 'Litecoin/Real Brasileiro',
