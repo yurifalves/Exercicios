@@ -71,6 +71,7 @@ def acoes3(mensagem, ativo):
     photo.close()
     os.remove(caminho_img)
     bot.send_message(mensagem.chat.id, f'Cotação de "{ativo}" ({dia1}/{mes1}/{ano1}-{dia2}/{mes2}/{ano2}) enviada com sucesso!')  # Responde
+    time.sleep(1)
     texto_final = """
     Para voltar ao menu inicial clique em:
      /inicio Retorna ao menu do bot
@@ -108,15 +109,24 @@ def google2(mensagem):
         chrome_options.add_argument('headless')
         driver = webdriver.Chrome(options=chrome_options)
         driver.get('https://www.google.com')
-        barra_pesquisa = driver.find_element(By.XPATH,
-                                             '/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input')
-        barra_pesquisa.send_keys(ativo)
+        barra_pesquisa = driver.find_element(By.XPATH, '/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input')
+        pesq = ativo + '/real'
+        barra_pesquisa.send_keys(pesq)
         barra_pesquisa.submit()
-        valor_ativo = driver.find_element(By.XPATH,
-                                          '//*[@id="knowledge-currency__updatable-data-column"]/div[1]/div[2]/span[1]').text
-        horario = driver.find_element(By.XPATH,
-                                      '//*[@id="knowledge-currency__updatable-data-column"]/div[2]/span').text[:-2]
-        bot.send_message(mensagem.chat.id, f'*1 {mensagem.text} = R$ {valor_ativo}* ({horario})', parse_mode='Markdown')
+        try:
+            # modelo 1
+            valor_ativo = driver.find_element(By.XPATH, '//*[@id="knowledge-currency__updatable-data-column"]/div[1]/div[2]/span[1]').text
+            horario = driver.find_element(By.XPATH, '//*[@id="knowledge-currency__updatable-data-column"]/div[2]/span').text[:-2]
+            ativo = driver.find_element(By.XPATH, '//*[@id="knowledge-currency__updatable-data-column"]/div[1]/div[1]/span[2]').text
+        except:
+            # modelo 2
+            try:
+                valor_ativo = driver.find_element(By.XPATH, '//*[@id="crypto-updatable_2"]/div[3]/div[2]/span[1]').text
+                horario = driver.find_element(By.XPATH, '// *[ @ id = "crypto-updatable_2"] / div[3] / div[3] / span').text[:-2]
+                ativo = driver.find_element(By.XPATH, '//*[@id="crypto-updatable_2"]/div[3]/div[1]/span[2]').text
+            except:
+                print('falha - modelo2')
+        bot.send_message(mensagem.chat.id, f'*1 {ativo} = R$ {valor_ativo}*\n({horario})', parse_mode='Markdown')
         time.sleep(1)
         texto_final = """
         Para voltar ao menu inicial clique em:
@@ -149,13 +159,9 @@ def google2(mensagem):
 
 @bot.message_handler(commands=['awesomeapi'])
 def awesomeapi(mensagem):
-    texto_inicio = """
-        Para saber todas as moedas suportadas:
-        /moedas-awesomeapi
-        """
     texto = ''
     for moeda in moedas_dic:
-        requisicao_dic = requests.get('https://economia.awesomeapi.com.br/last/{moeda}').json()[moeda.replace('-', '')]
+        requisicao_dic = requests.get(f'https://economia.awesomeapi.com.br/last/{moeda}').json()[moeda.replace('-', '')]
         moeda_name = requisicao_dic["name"][:requisicao_dic["name"].find("/")]
         moeda_code = requisicao_dic["code"]
         preco_compra = round(float(requisicao_dic["bid"]), 2)
