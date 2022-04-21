@@ -9,7 +9,7 @@ int main() {
     printf("Digite um número: ");
     fflush(stdin);
     scanf("%i", &num);
-    printf("Analisando o número %i, o antecessor é %i e o sucessor é %i.\n", num, num-1, num+1);
+    printf("Analisando o número %i, seu antecessor é %i e o sucessor é %i.\n", num, num-1, num+1);
 
     return 0;
 }
