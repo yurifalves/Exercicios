@@ -9,7 +9,7 @@ int main() {
     printf("Digite um número: ");
     scanf("%i", &num);
     int dobro = 2*num;
-    float terco = num/3.0;
+    float terco = (float)num/3;
     printf("Analisando o número %i, seu dobro é %i e sua terça parte é %.2f.\n", num, dobro, terco);
 
     return 0;
