@@ -9,6 +9,7 @@ int main() {
     printf("Digite o primeiro valor: ");
     scanf("%d", &a);
     printf("Digite o segundo valor: ");
+    fflush(stdin);
     scanf("%d", &b);
     printf("------ OPERAÇÕES BITWISE ------\n");
     printf("%d & %d é igual a %d\n", a, b, a&b);
