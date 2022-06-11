@@ -1,0 +1,13 @@
+algoritmo ex002_celsiusparafahrenheit;
+// Síntese: ....................
+//  Objetivo: .................... 
+//  Entrada : ....................
+//  Saída   : ....................
+
+principal
+    real temperaturaC, temperaturaF;
+    leia(temperaturaC);
+    temperaturaF = (9/5)*temperaturaC+32;
+    escreval("FAHRENHEIT = ", temperaturaF::1);
+    
+fimPrincipal
