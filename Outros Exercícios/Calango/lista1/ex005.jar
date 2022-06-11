@@ -1,0 +1,26 @@
+algoritmo ex005_tempodeclassificacao;
+// Síntese: ....................
+//  Objetivo: .................... 
+//  Entrada : ....................
+//  Saída   : ....................
+
+principal
+    real tempoVolta, saidasDaPista, trocasDePneus, tempoFinal;
+    inteiro i;
+
+	leia(tempoVolta);
+	leia(saidasDaPista);
+	leia(trocasDePneus);
+
+	tempoFinal = tempoVolta + 500*saidasDaPista;
+	
+
+	para (i de 1 ate trocasDePneus passo 1) faca
+		tempoFinal = tempoFinal + 0.03*tempoFinal;
+	fimPara
+    
+    // Segunda forma --> tempoFinal = tempoFinal*exp(1.03, trocasDePneus);
+    
+    escreval("TEMPO FINAL = ", tempoFinal::2, " ms");
+    
+fimPrincipal
