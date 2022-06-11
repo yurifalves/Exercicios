@@ -1,0 +1,17 @@
+algoritmo ex003_distanciaentredoispontos;
+// Síntese: ....................
+//  Objetivo: .................... 
+//  Entrada : ....................
+//  Saída   : ....................
+
+principal
+    real x1, y1, x2, y2, distancia;
+    leia(x1);
+    leia(y1);
+    leia(x2);
+    leia(y2);
+
+    distancia = raizQuadrada((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
+    escreval("DISTANCIA = ", distancia::2);
+    
+fimPrincipal
