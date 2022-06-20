@@ -1,0 +1,37 @@
+algoritmo percentualAdicional;
+// Síntese: Algorítmo que calcula a ordem crescente baseado nas condições.
+//  Objetivo: Determina a ordem crescente de 3 números.
+//  Entrada : num1, num2, num3
+//  Saída   : Os números em ordem crescente
+
+principal
+	inteiro num1, num2, num3;
+	leia(num1);
+	leia(num2);
+	leia(num3);
+	
+	se ((num1==num2 e num2==num3) ou (num1<num2 e num2<num3) ou (num1==num2 e num2<num3)) entao
+		escreval(num1, " ", num2, " ", num3);
+	fimSe
+	
+	se ((num1<num3 e num3<num2) ou (num1==num3 e num3<num2)) entao
+		escreval(num1, " ", num3, " ", num2);
+	fimSe
+	
+	se ((num2==num3 e num3<num1) ou (num2<num3 e num3<num1)) entao
+		escreval(num2, " ", num3, " ", num1);
+	fimSe
+
+	se (num2<num1 e num1<num3) entao
+		escreval(num2, " ", num1, " ", num3);
+	fimSe
+
+	se (num3<num1 e num1<num2) entao
+		escreval(num3, " ", num1, " ", num2);
+	fimSe
+
+	se (num3<num2 e num2<num1) entao
+		escreval(num3, " ", num2, " ", num1);
+	fimSe
+    
+fimPrincipal
