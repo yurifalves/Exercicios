@@ -1,8 +1,8 @@
-algoritmo ex006_mediaponderada;
-// Síntese: ....................
-//  Objetivo: .................... 
-//  Entrada : ....................
-//  Saída   : ....................
+algoritmo MediaPonderada;
+// Síntese: Algorítmo que calcula a média ponderada.
+//  Objetivo: Calcula a média ponderada e verifica se as condições estão corretas para que isso ocorra.
+//  Entrada : nota1,peso1,not2,peso2,nota3,peso3
+//  Saída   : mediaponderada
 
 principal
     real nota1, peso1, nota2, peso2, nota3, peso3;
