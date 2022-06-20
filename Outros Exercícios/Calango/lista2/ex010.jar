@@ -43,7 +43,7 @@ principal
         se (quantidadeTelas<=2) entao
 			valor = 15.99*quantidadeTelas;
     	fimSe
-		se (quantidadeTelas<=4) entao
+		se (quantidadeTelas>2 e quantidadeTelas<=4) entao
 			valor = 10.99*quantidadeTelas;
     	fimSe
     	se (quantidadeTelas>4) entao
