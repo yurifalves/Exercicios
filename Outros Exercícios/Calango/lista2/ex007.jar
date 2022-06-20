@@ -1,0 +1,25 @@
+algoritmo MediaPonderada;
+// Síntese: Algorítmo que calcula a média ponderada.
+//  Objetivo: Calcula a média ponderada e verifica se as condições estão corretas para que isso ocorra.
+//  Entrada : nota1,peso1,nota2,peso2,nota3,peso3
+//  Saída   : mediaponderada
+
+principal
+    real nota1, peso1, nota2, peso2, nota3, peso3;
+    real mediaPonderada;
+    
+    leia(nota1);
+    leia(peso1);
+    leia(nota2);
+    leia(peso2);
+    leia(nota3);
+    leia(peso3);
+
+    se ((nota1<0 ou nota2<0 ou nota3<0 ou peso1<0 ou peso2<0 ou peso3<0) ou ((peso1+peso2+peso3)!=10))   entao
+		escreval("ERRO");
+	senao
+		mediaPonderada = (peso1*nota1+peso2*nota2+peso3*nota3)/(peso1+peso2+peso3);
+		escreval("MEDIA PONDERADA = ", mediaPonderada::2);
+	fimSe
+    
+fimPrincipal
