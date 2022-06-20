@@ -18,20 +18,20 @@ fimPrincipal
 
 funcao real valorFinal(real valorProduto, real valorFrete, texto regiao)
 	real valorTotal;
-
-	se (regiao == "SUDESTE") entao
+	
+	se (comparaTexto(regiao, "SUDESTE") == 0) entao
 		valorTotal = valorProduto+1.01*valorFrete;
 	fimSe
-	se (regiao == "SUL") entao
+	se (comparaTexto(regiao, "SUL") == 0) entao
 		valorTotal = valorProduto+1.02*valorFrete;
 	fimSe
-	se (regiao == "CENTRO-OESTE") entao
+	se (comparaTexto(regiao, "CENTRO-OESTE") == 0) entao
 		valorTotal = valorProduto+1.05*valorFrete;
 	fimSe
-	se (regiao == "NORDESTE") entao
+	se (comparaTexto(regiao, "NORDESTE") == 0) entao
 		valorTotal = valorProduto+1.07*valorFrete;
 	fimSe
-	se (regiao == "NORTE") entao
+	se (comparaTexto(regiao, "NORTE") == 0) entao
 		valorTotal = valorProduto+1.10*valorFrete;
 	fimSe
 	
