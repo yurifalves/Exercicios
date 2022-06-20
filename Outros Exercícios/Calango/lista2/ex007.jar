@@ -1,25 +1,32 @@
-algoritmo MediaPonderada;
-// Síntese: Algorítmo que calcula a média ponderada.
-//  Objetivo: Calcula a média ponderada e verifica se as condições estão corretas para que isso ocorra.
-//  Entrada : nota1,peso1,nota2,peso2,nota3,peso3
-//  Saída   : mediaponderada
+algoritmo consumoDeEnergia;
+// Síntese: Algorítmo que calcula o consumo de energia.
+//  Objetivo: Calcula o consumo de energia e verifica as condições para determinar o valor correto.
+//  Entrada : consumoDeEnergia
+//  Saída   : valorCobrado
 
 principal
-    real nota1, peso1, nota2, peso2, nota3, peso3;
-    real mediaPonderada;
-    
-    leia(nota1);
-    leia(peso1);
-    leia(nota2);
-    leia(peso2);
-    leia(nota3);
-    leia(peso3);
-
-    se ((nota1<0 ou nota2<0 ou nota3<0 ou peso1<0 ou peso2<0 ou peso3<0) ou ((peso1+peso2+peso3)!=10))   entao
-		escreval("ERRO");
-	senao
-		mediaPonderada = (peso1*nota1+peso2*nota2+peso3*nota3)/(peso1+peso2+peso3);
-		escreval("MEDIA PONDERADA = ", mediaPonderada::2);
-	fimSe
+	inteiro consumoDeEnergia;
+	leia(consumoDeEnergia);
+	
+    escreval("VALOR = ", valorCobrado(consumoDeEnergia)::2);
     
 fimPrincipal
+
+funcao real valorCobrado(inteiro consumoDeEnergia)
+	real valorTotal;
+
+	se (consumoDeEnergia<=50) entao
+		valorTotal = consumoDeEnergia*0.1918;
+	fimSe
+	se (consumoDeEnergia>=51 e consumoDeEnergia<=100) entao
+		valorTotal = consumoDeEnergia*0.3877;
+	fimSe
+	se (consumoDeEnergia>=101 e consumoDeEnergia<=200) entao
+		valorTotal = consumoDeEnergia*0.5566;
+	fimSe
+	se (consumoDeEnergia>200) entao
+		valorTotal = consumoDeEnergia*0.7834;
+	fimSe
+	
+	retorna valorTotal;
+fimFuncao
