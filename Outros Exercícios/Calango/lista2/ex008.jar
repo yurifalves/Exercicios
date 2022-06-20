@@ -1,1 +1,39 @@
-a
+algoritmo percentualAdicional;
+// Síntese: Algorítmo que calcula o percentual adicional baseado no frete.
+//  Objetivo: Calcula o valor final e verifica as condições para determinar o valor correto.
+//  Entrada : valorProduto, valorFrete, regiao
+//  Saída   : valorTotal
+
+principal
+	real valorProduto, valorFrete;
+	texto regiao;
+
+	leia(valorProduto);
+	leia(valorFrete);
+	leia(regiao);
+	
+    escreval("VALOR FINAL = ", valorFinal(valorProduto, valorFrete, regiao)::2);
+    
+fimPrincipal
+
+funcao real valorFinal(real valorProduto, real valorFrete, texto regiao)
+	real valorTotal;
+
+	se (regiao == "SUDESTE") entao
+		valorTotal = valorProduto+1.01*valorFrete;
+	fimSe
+	se (regiao == "SUL") entao
+		valorTotal = valorProduto+1.02*valorFrete;
+	fimSe
+	se (regiao == "CENTRO-OESTE") entao
+		valorTotal = valorProduto+1.05*valorFrete;
+	fimSe
+	se (regiao == "NORDESTE") entao
+		valorTotal = valorProduto+1.07*valorFrete;
+	fimSe
+	se (regiao == "NORTE") entao
+		valorTotal = valorProduto+1.10*valorFrete;
+	fimSe
+	
+	retorna valorTotal;
+fimFuncao
