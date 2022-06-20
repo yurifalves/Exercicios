@@ -1,1 +1,24 @@
+algoritmo ex001_gastocomcombustivel;
+// Síntese: ....................
+//  Objetivo: .................... 
+//  Entrada : ....................
+//  Saída   : ....................
 
+principal
+    real consumoMedio;
+    real velocidadeMedia;
+    inteiro duracaoViagem;
+    real precoLitroCombustivel;
+    real distanciaPercorrida, valorGasto;
+
+    leia(consumoMedio);
+    leia(velocidadeMedia);
+    leia(duracaoViagem);
+    leia(precoLitroCombustivel);
+    distanciaPercorrida = velocidadeMedia*duracaoViagem;
+    valorGasto = (distanciaPercorrida/consumoMedio)*precoLitroCombustivel;
+
+    escreval("DISTANCIA PERCORRIDA (KM) = ", distanciaPercorrida::1);
+    escreval("VALOR GASTO (REAIS) = ", valorGasto::1);
+    
+fimPrincipal
