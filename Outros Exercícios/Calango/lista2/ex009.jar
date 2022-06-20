@@ -1,4 +1,4 @@
-algoritmo percentualAdicional;
+algoritmo ordenarInteiros;
 // Síntese: Algorítmo que calcula a ordem crescente baseado nas condições.
 //  Objetivo: Determina a ordem crescente de 3 números.
 //  Entrada : num1, num2, num3
