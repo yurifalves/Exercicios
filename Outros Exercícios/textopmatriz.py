@@ -33,6 +33,6 @@ def texto_para_matriz(texto):
         return the_list
 
     vetores_linha_str = remove_element('', texto.splitlines())  # ['4 11 62', '-8 0 1', '3 3 0']
-    vetores_linha = [np.fromstring(linha, sep=' ') for linha in vetores_linha_str]  # [array([4., 5., 6.]), array([7., 8., 9.]), array([1., 2., 3.])]
+    vetores_linha = [np.fromstring(linha, sep=' ') for linha in vetores_linha_str]  # [array([ 4., 11., 62.]), array([-8.,  0.,  1.]), array([3., 3., 0.])]
     matriz = np.array(vetores_linha)
     return matriz
