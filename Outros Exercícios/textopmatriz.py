@@ -27,17 +27,12 @@ def texto_para_matriz(texto):
               [a31, a32, ... amn]])
 
     """
+    
     def remove_element(element, the_list):
-        original_list = the_list.copy()
-        try:
-            the_list = list(set(the_list))
-            the_list.remove(element)
-            return the_list
-        except Exception:
-            return original_list
+        while element in the_list: the_list.remove(element)
+        return the_list
 
-    vetores_linha_str = remove_element('', texto.splitlines())  # ['4 5 6', '1 2 3', '7 8 9']
-    vetores_linha = [np.fromstring(linha, sep=' ') for linha in
-                     vetores_linha_str]  # [array([4., 5., 6.]), array([7., 8., 9.]), array([1., 2., 3.])]
+    vetores_linha_str = remove_element('', texto.splitlines())  # ['4 11 62', '-8 0 1', '3 3 0']
+    vetores_linha = [np.fromstring(linha, sep=' ') for linha in vetores_linha_str]  # [array([4., 5., 6.]), array([7., 8., 9.]), array([1., 2., 3.])]
     matriz = np.array(vetores_linha)
     return matriz
