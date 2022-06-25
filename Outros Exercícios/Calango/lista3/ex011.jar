@@ -1,59 +1,43 @@
-algoritmo assinaturaStreaming;
-// Síntese: Algorítmo que calcula a assinatura de streaming baseado nas condições.
-//  Objetivo: Determina a assinatura do streaming.
-//  Entrada : quantidadeTelas, confirmacao, valor
-//  Saída   : valor
+algoritmo quantidadeNumerosPrimos;
+// Síntese: Algorítmo que analisa quantos números digitados realmente são primos.
+//  Objetivo: Quantos são digitados e primos.
+//  Entrada : N inteiros
+//  Saída   : quantidadeDeNumeros, quantidadeDeNumerosPrimos
 
 principal
-	inteiro quantidadeTelas;
-	caracter confirmacao;
-	real valor;
+	inteiro numero, quantidadeDeNumeros, quantidadeDeNumerosPrimos;
+	leia(numero);
+	quantidadeDeNumeros = 1;
+	se (isPrime(numero) == 1) entao quantidadeDeNumerosPrimos = 1;
+	senao quantidadeDeNumerosPrimos = 0;
+	fimSe
 	
-	leia(quantidadeTelas);
-	leiaCaracter(confirmacao);
-	confirmacao = maiusculoCaracter(confirmacao);
-	
-	escolha (confirmacao)
-    caso 'S'
-
-		se (quantidadeTelas <= 0) entao
-			escreval("ASSINATURA INDISPONIVEL!");
-			interrompa;
+	enquanto (numero>1) faca
+		leia(numero);
+		quantidadeDeNumeros = quantidadeDeNumeros + 1;
+		se (isPrime(numero) == 1) entao
+			quantidadeDeNumerosPrimos = quantidadeDeNumerosPrimos + 1;
 		fimSe
-    
-    	se (quantidadeTelas<=2) entao
-			valor = 15.99*quantidadeTelas;
-    	fimSe
-		se (quantidadeTelas>2 e quantidadeTelas<=4) entao
-			valor = 10.99*quantidadeTelas;
-    	fimSe
-    	se (quantidadeTelas>4) entao
-			valor = 8.99*quantidadeTelas;
-    	fimSe
-    	
-        escreval("ASSINATURA = R$ ", valor+0.17*valor::2);
-        interrompa;
-    caso 'N'
+	fimEnquanto
 
-		se (quantidadeTelas <= 0) entao
-			escreval("ASSINATURA INDISPONIVEL!");
-			interrompa;
-		fimSe
-    
-        se (quantidadeTelas<=2) entao
-			valor = 15.99*quantidadeTelas;
-    	fimSe
-		se (quantidadeTelas>2 e quantidadeTelas<=4) entao
-			valor = 10.99*quantidadeTelas;
-    	fimSe
-    	se (quantidadeTelas>4) entao
-			valor = 8.99*quantidadeTelas;
-    	fimSe
-    	
-        escreval("ASSINATURA = R$ ", valor::2);
-        interrompa;
-    outroCaso
-        escreval("ASSINATURA INDISPONIVEL!");
-	fimEscolha
+	escreval("NUMEROS DIGITADOS = ", quantidadeDeNumeros-1);
+	escreval("NUMEROS PRIMOS = ", quantidadeDeNumerosPrimos);
     
 fimPrincipal
+
+funcao inteiro isPrime(inteiro n)
+	inteiro r, f;
+
+	se (n == 2 ou n == 3) entao retorna 1; fimSe
+    se (n < 2 ou n % 2 == 0) entao retorna 0; fimSe
+    se (n < 9) entao retorna 1; fimSe
+    se (n % 3 == 0) entao retorna 0; fimSe
+    r = exp(n, 0.5);
+    f = 5;
+    enquanto (f <= r) faca
+        se (n % f == 0) entao retorna 0; fimSe
+        se (n % (f + 2) == 0) entao retorna 0; fimSe
+        f = f+6;
+    fimEnquanto
+    retorna 1;
+fimFuncao
