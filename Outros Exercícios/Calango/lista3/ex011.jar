@@ -1,0 +1,59 @@
+algoritmo assinaturaStreaming;
+// Síntese: Algorítmo que calcula a assinatura de streaming baseado nas condições.
+//  Objetivo: Determina a assinatura do streaming.
+//  Entrada : quantidadeTelas, confirmacao, valor
+//  Saída   : valor
+
+principal
+	inteiro quantidadeTelas;
+	caracter confirmacao;
+	real valor;
+	
+	leia(quantidadeTelas);
+	leiaCaracter(confirmacao);
+	confirmacao = maiusculoCaracter(confirmacao);
+	
+	escolha (confirmacao)
+    caso 'S'
+
+		se (quantidadeTelas <= 0) entao
+			escreval("ASSINATURA INDISPONIVEL!");
+			interrompa;
+		fimSe
+    
+    	se (quantidadeTelas<=2) entao
+			valor = 15.99*quantidadeTelas;
+    	fimSe
+		se (quantidadeTelas>2 e quantidadeTelas<=4) entao
+			valor = 10.99*quantidadeTelas;
+    	fimSe
+    	se (quantidadeTelas>4) entao
+			valor = 8.99*quantidadeTelas;
+    	fimSe
+    	
+        escreval("ASSINATURA = R$ ", valor+0.17*valor::2);
+        interrompa;
+    caso 'N'
+
+		se (quantidadeTelas <= 0) entao
+			escreval("ASSINATURA INDISPONIVEL!");
+			interrompa;
+		fimSe
+    
+        se (quantidadeTelas<=2) entao
+			valor = 15.99*quantidadeTelas;
+    	fimSe
+		se (quantidadeTelas>2 e quantidadeTelas<=4) entao
+			valor = 10.99*quantidadeTelas;
+    	fimSe
+    	se (quantidadeTelas>4) entao
+			valor = 8.99*quantidadeTelas;
+    	fimSe
+    	
+        escreval("ASSINATURA = R$ ", valor::2);
+        interrompa;
+    outroCaso
+        escreval("ASSINATURA INDISPONIVEL!");
+	fimEscolha
+    
+fimPrincipal
