@@ -1,0 +1,45 @@
+algoritmo ContaRestaurante;
+// Síntese: Algorítmo que analisa o preço num determinado restaurante
+//  Objetivo: levanta informações acerca das pessoas do grupo e retorna o valor conforma as regras.
+//  Entrada : numero de amigos, e se são homens ou mulheres e bebidas
+//  Saída   : valor total da conta
+
+principal
+	inteiro qtdAmigos;
+	inteiro qtdBebidas;
+	inteiro qtdHomensTotal, qtdMulheresTotal, qtdBebidasTotal;
+
+	caracter sexoDoAmigo;
+	inteiro i;
+	
+	qtdMulheresTotal = 0;
+	qtdHomensTotal = 0;
+	qtdBebidasTotal = 0;
+	
+	
+	leia(qtdAmigos);
+	para (i de 1 ate qtdAmigos passo 1) faca
+		leiaCaracter(sexoDoAmigo);
+		sexoDoAmigo = maiusculoCaracter(sexoDoAmigo);
+		escolha (sexoDoAmigo)
+			caso 'M'
+				qtdHomensTotal = qtdHomensTotal + 1;
+			caso 'F'
+			    qtdMulheresTotal = qtdMulheresTotal + 1;
+		fimEscolha
+		
+		leia(qtdBebidas);
+		qtdBebidasTotal = qtdBebidasTotal + qtdBebidas; 
+		
+	fimPara
+
+    escreval("VALOR TOTAL = R$ ", valorConta(qtdHomensTotal, qtdMulheresTotal, qtdBebidasTotal)::2);
+fimPrincipal
+
+funcao real valorConta(inteiro qtdHomens, inteiro qtdMulheres, inteiro qtdBebidas)
+	real valorTotal;
+	
+	valorTotal = 39.90*qtdHomens + 34.90*qtdMulheres + 4.50*qtdBebidas;
+	valorTotal = valorTotal + 0.1*valorTotal;
+	retorna valorTotal;
+fimFuncao
