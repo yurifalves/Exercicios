@@ -1,0 +1,38 @@
+algoritmo Comissao;
+// Síntese: Algorítmo que analisa a comissao d a empresa.
+//  Objetivo: levanta informações acerca dos vendedores da empresa e qualifica em maior/menor
+//  Entrada : comissao e código
+//  Saída   : vendedor com maior e o com menor comissao
+
+principal
+	inteiro quantidadeVendedores;
+	inteiro codigoMaiorComissao, codigoMenorComissao;
+	real valorMaiorComissao, valorMenorComissao;
+	
+	inteiro codigoVendedor;
+	real valorComissao;
+
+	valorMaiorComissao = 0;
+	valorMenorComissao = 0;
+
+	leia(quantidadeVendedores);
+	
+	para (i de 1 ate quantidadeVendedores passo 1) faca
+		leia(codigoVendedor);
+		leia(valorComissao);
+
+		se (valorComissao>valorMaiorComissao) entao
+			valorMaiorComissao = valorComissao;
+			codigoMaiorComissao = codigoVendedor;
+		fimSe
+		se (valorComissao<valorMaiorComissao) entao
+			valorMenorrComissao = valorComissao;
+			codigoMenorComissao = codigoVendedor;
+		fimSe
+		
+	fimPara
+
+	escreval("VENDEDOR COM MAIOR COMISSAO = ", codigoMaiorComissao);
+	escreval("VENDEDOR COM MENOR COMISSAO = ", codigoMenorComissao);
+    
+fimPrincipal
