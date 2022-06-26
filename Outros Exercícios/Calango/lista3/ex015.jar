@@ -10,8 +10,9 @@ principal
 	inteiro qtdHomensTotal, qtdMulheresTotal, qtdBebidasTotal;
 
 	caracter sexoDoAmigo;
-	inteiro i;
+
 	
+	inteiro i;
 	qtdMulheresTotal = 0;
 	qtdHomensTotal = 0;
 	qtdBebidasTotal = 0;
@@ -22,9 +23,9 @@ principal
 		leiaCaracter(sexoDoAmigo);
 		sexoDoAmigo = maiusculoCaracter(sexoDoAmigo);
 		escolha (sexoDoAmigo)
-			caso 'M'
+			caso 'H'
 				qtdHomensTotal = qtdHomensTotal + 1;
-			caso 'F'
+			caso 'M'
 			    qtdMulheresTotal = qtdMulheresTotal + 1;
 		fimEscolha
 		
@@ -37,9 +38,5 @@ principal
 fimPrincipal
 
 funcao real valorConta(inteiro qtdHomens, inteiro qtdMulheres, inteiro qtdBebidas)
-	real valorTotal;
-	
-	valorTotal = 39.90*qtdHomens + 34.90*qtdMulheres + 4.50*qtdBebidas;
-	valorTotal = valorTotal + 0.1*valorTotal;
-	retorna valorTotal;
+	retorna 1.10*(39.90*qtdHomens + 34.90*qtdMulheres + 4.50*qtdBebidas);
 fimFuncao
