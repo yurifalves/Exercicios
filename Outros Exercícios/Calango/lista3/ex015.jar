@@ -11,7 +11,7 @@ principal
 
 	caracter sexoDoAmigo;
 
-	
+
 	inteiro i;
 	qtdMulheresTotal = 0;
 	qtdHomensTotal = 0;
@@ -25,16 +25,19 @@ principal
 		escolha (sexoDoAmigo)
 			caso 'H'
 				qtdHomensTotal = qtdHomensTotal + 1;
+				interrompa;
 			caso 'M'
 			    qtdMulheresTotal = qtdMulheresTotal + 1;
+			    interrompa;
 		fimEscolha
 		
 		leia(qtdBebidas);
 		qtdBebidasTotal = qtdBebidasTotal + qtdBebidas; 
 		
 	fimPara
-
-    escreval("VALOR TOTAL = R$ ", valorConta(qtdHomensTotal, qtdMulheresTotal, qtdBebidasTotal)::2);
+	escreval(qtdMulheresTotal," " ,qtdHomensTotal, " ", qtdBebidasTotal);
+	escreval(1.10*(39.90*qtdHomensTotal + 34.90*qtdMulheresTotal + 4.50*qtdBebidas));
+    escreval("VALOR TOTAL = R$ ", valorConta(qtdHomensTotal, qtdMulheresTotal-1, qtdBebidasTotal)::2);
 fimPrincipal
 
 funcao real valorConta(inteiro qtdHomens, inteiro qtdMulheres, inteiro qtdBebidas)
