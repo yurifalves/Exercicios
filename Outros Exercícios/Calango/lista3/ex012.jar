@@ -16,7 +16,7 @@ principal
 	pesoMedio = 0;
 	jogadoresComMenos170 = 0;
 	
-	para (i de 1 ate 11*3 passo 1) faca
+	para (i de 1 ate 11 passo 1) faca
 		leia(idade);
 		leia(peso);
 		leia(altura);
