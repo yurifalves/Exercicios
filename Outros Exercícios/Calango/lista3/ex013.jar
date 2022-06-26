@@ -5,6 +5,8 @@ algoritmo Comissao;
 //  Saída   : vendedor com maior e o com menor comissao
 
 principal
+	inteiro i;
+
 	inteiro quantidadeVendedores;
 	inteiro codigoMaiorComissao, codigoMenorComissao;
 	real valorMaiorComissao, valorMenorComissao;
@@ -12,21 +14,25 @@ principal
 	inteiro codigoVendedor;
 	real valorComissao;
 
-	valorMaiorComissao = 0;
-	valorMenorComissao = 0;
-
 	leia(quantidadeVendedores);
 	
 	para (i de 1 ate quantidadeVendedores passo 1) faca
 		leia(codigoVendedor);
 		leia(valorComissao);
 
+		se (i==1) entao
+			valorMaiorComissao = valorComissao;
+			codigoMaiorComissao = codigoVendedor;
+			valorMenorComissao = valorComissao;
+			codigoMenorComissao = codigoVendedor;
+		fimSe
+		
 		se (valorComissao>valorMaiorComissao) entao
 			valorMaiorComissao = valorComissao;
 			codigoMaiorComissao = codigoVendedor;
 		fimSe
-		se (valorComissao<valorMaiorComissao) entao
-			valorMenorrComissao = valorComissao;
+		se (valorComissao<valorMenorComissao) entao
+			valorMenorComissao = valorComissao;
 			codigoMenorComissao = codigoVendedor;
 		fimSe
 		
