@@ -5,8 +5,6 @@ algoritmo ConteudoDeTexto;
 //  Saída   : quantidade de caracteres, maiuscular minuscular, numerso, simbolos
 
 principal
-	inteiro qtdCaracteres, qtdMaiusculas, qtdMinusculas, qtdNumeros, qtdSimbolos;
-
 	texto textoInserido;
 	leia(textoInserido);
 
