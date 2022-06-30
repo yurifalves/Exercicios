@@ -10,22 +10,30 @@ principal
 	texto textoInserido;
 	leia(textoInserido);
 
-	escreval("QUANTIDADE DE CARACTERES = ", NumeroDeCaracteres(textoInserido));
-	escreval("QUANTIDADE DE MAIUSCULAS = ", x);
-	escreval("QUANTIDADE DE MINUSCULAS = ", x);
-	escreval("QUANTIDADE DE NUMEROS = ", x);
-	escreval("QUANTIDADE DE SIMBOLOS = ", x);
+	escreval("QUANTIDADE DE CARACTERES = ", qtdCaracteres(textoInserido));
+	escreval("QUANTIDADE DE MAIUSCULAS = ", qtdMaiusculas(textoInserido));
+	escreval("QUANTIDADE DE MINUSCULAS = ", qtdMinusculas(textoInserido));
+	escreval("QUANTIDADE DE NUMEROS = ", qtdNumeros(textoInserido));
+	escreval("QUANTIDADE DE SIMBOLOS = ", qtdSimbolos(textoInserido));
 	
 fimPrincipal
 
-funcao inteiro NumeroDeCaracteres(texto txt)
+funcao inteiro qtdCaracteres(texto txt)
 	retorna tamanhoTexto(txt);
-funcao inteiro NumeroDeMaiusculas(texto txt)
+fimFuncao
+
+funcao inteiro qtdMaiusculas(texto txt)
 	retorna tamanhoTexto(txt);
-funcao inteiro NumeroDeMinusculas(texto txt)
+fimFuncao
+
+funcao inteiro qtdMinusculas(texto txt)
 	retorna tamanhoTexto(txt);
-funcao inteiro NumeroDeCaracteres(texto txt)
+fimFuncao
+
+funcao inteiro qtdNumeros(texto txt)
 	retorna tamanhoTexto(txt);
-funcao inteiro NumeroDeCaracteres(texto txt)
+fimFuncao
+
+funcao inteiro qtdSimbolos(texto txt)
 	retorna tamanhoTexto(txt);
 fimFuncao
