@@ -1,0 +1,31 @@
+algoritmo ConteudoDeTexto;
+// Síntese: Algorítmo que analisa o conteúdo de um texto
+//  Objetivo: analisar o texto e retornar informações acerca dele
+//  Entrada : texto
+//  Saída   : quantidade de caracteres, maiuscular minuscular, numerso, simbolos
+
+principal
+	inteiro qtdCaracteres, qtdMaiusculas, qtdMinusculas, qtdNumeros, qtdSimbolos;
+
+	texto textoInserido;
+	leia(textoInserido);
+
+	escreval("QUANTIDADE DE CARACTERES = ", NumeroDeCaracteres(textoInserido));
+	escreval("QUANTIDADE DE MAIUSCULAS = ", x);
+	escreval("QUANTIDADE DE MINUSCULAS = ", x);
+	escreval("QUANTIDADE DE NUMEROS = ", x);
+	escreval("QUANTIDADE DE SIMBOLOS = ", x);
+	
+fimPrincipal
+
+funcao inteiro NumeroDeCaracteres(texto txt)
+	retorna tamanhoTexto(txt);
+funcao inteiro NumeroDeMaiusculas(texto txt)
+	retorna tamanhoTexto(txt);
+funcao inteiro NumeroDeMinusculas(texto txt)
+	retorna tamanhoTexto(txt);
+funcao inteiro NumeroDeCaracteres(texto txt)
+	retorna tamanhoTexto(txt);
+funcao inteiro NumeroDeCaracteres(texto txt)
+	retorna tamanhoTexto(txt);
+fimFuncao
