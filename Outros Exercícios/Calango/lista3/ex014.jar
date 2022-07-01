@@ -27,7 +27,6 @@ funcao inteiro qtdMaiusculas(texto txt)
 	cont = 0;
 	para (i de 0 ate qtdCaracteres(txt)-1 passo 1) faca
 		caractere_original = caracterTexto(txt, i);
-		caractere_maiusculo = maiusculoCaracter(caractere_original);
 		se (caracterAscii(caractere_original)>=65 e caracterAscii(caractere_original)<=90) entao cont = cont + 1; fimSe
 	fimPara
 	retorna cont;
