@@ -1,0 +1,32 @@
+algoritmo semNome;
+//  Síntese: calcular o somatorio
+//  Objetivo: levanta informacoes sobre um numero e retorna a conta solicitada de somatorio
+//  Entrada : inteiro desejado
+//  Saída   : somatorio
+
+
+principal
+	inteiro i;
+	leia(i);
+
+	se (i <= 0) entao escreval("VALOR DE N INCORRETO");
+ 	senao escreval("SOMA = ", somatorio(i)::2); fimSe
+	
+fimPrincipal
+
+funcao real somatorio(inteiro i)
+	real s;
+
+
+
+
+
+	inteiro ii;
+	s=0;
+	para (ii de 1 ate i passo 1) faca
+		s = s + (ii*ii+1)/(ii+3);
+	fimPara
+	
+	retorna s;
+	
+fimFuncao
