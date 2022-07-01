@@ -21,7 +21,16 @@ funcao inteiro qtdCaracteres(texto txt)
 fimFuncao
 
 funcao inteiro qtdMaiusculas(texto txt)
-	retorna tamanhoTexto(txt);
+	inteiro i, cont;
+	caracter caractere_original, caractere_maiusculo;
+	
+	cont = 0;
+	para (i de 0 ate qtdCaracteres(txt)-1 passo 1) faca
+		caractere_original = caracterTexto(txt, i);
+		caractere_maiusculo = maiusculoCaracter(caractere_original);
+		se (caracterAscii(caractere_original) == caracterAscii(caractere_maiusculo)) entao cont = cont + 1; fimSe
+	fimPara
+	retorna cont;
 fimFuncao
 
 funcao inteiro qtdMinusculas(texto txt)
