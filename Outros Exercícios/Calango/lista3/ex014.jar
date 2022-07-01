@@ -47,7 +47,15 @@ funcao inteiro qtdMinusculas(texto txt)
 fimFuncao
 
 funcao inteiro qtdNumeros(texto txt)
-	retorna tamanhoTexto(txt);
+	inteiro i, cont;
+	caracter caractere_original;
+	
+	cont = 0;
+	para (i de 0 ate qtdCaracteres(txt)-1 passo 1) faca
+		caractere_original = caracterTexto(txt, i);
+		se (caracterAscii(caractere_original) >= 48 e caracterAscii(caractere_original) <= 57) entao cont = cont + 1; fimSe
+	fimPara
+	retorna cont;
 fimFuncao
 
 funcao inteiro qtdSimbolos(texto txt)
