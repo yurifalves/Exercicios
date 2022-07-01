@@ -1,0 +1,27 @@
+algoritmo calculaFatorial;
+//  Síntese: calcular o fatorial
+//  Objetivo: levanta informacoes sobre um numero e retorna a conta solicitada de fatorial
+//  Entrada : inteiro desejado
+//  Saída   :fatorial
+
+
+principal
+	inteiro x, y;
+	leia(x);
+	leia(y);
+
+	se (x<0 e y>=0) entao escreval("VALOR DE X INCORRETO"); fimSe
+	se (y<0 e x>=0) entao escreval("VALOR DE Y INCORRETO"); fimSe
+	se (x<0 e y<0) entao escreval("VALOR DE X INCORRETO"); escreval("VALOR DE Y INCORRETO"); fimSe
+	se (x>=0 e y>=0) entao escreval("RESULTADO = ", fatorial(x, y)::3); fimSe
+	
+fimPrincipal
+
+funcao inteiro fat(inteiro i)
+	se (i<=1) entao retorna 1; fimSe
+	retorna i*fat(i-1);
+fimFuncao
+
+funcao real fatorial(inteiro x, inteiro y)
+	retorna fat(x+y)/raizQuadrada(fat(x)+fat(y));
+fimFuncao
