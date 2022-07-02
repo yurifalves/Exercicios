@@ -3,9 +3,11 @@ def media(amostra):
     media = statistics.mean(amostra)
     return media
 
+
 def desvio_padrao(amostra):
-    import statistics
-    desvio_padrao = statistics.pstdev(amostra)
+    import numpy as np
+    array = np.array(amostra)
+    desvio_padrao = np.std(array, ddof=1)  # Desvio padrão com N-1 ao invés de N
     return desvio_padrao
 
 
