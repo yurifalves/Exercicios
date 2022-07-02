@@ -1,0 +1,47 @@
+algoritmo somaemult;
+//  Síntese: calcular a soma e mulplicacao dos divisores
+//  Objetivo: levanta informacoes sobre um numero e retorna a conta solicitada de soma/multiplicacao
+//  Entrada : inteiro desejado
+//  Saída   : soma e multiplicacao
+
+
+principal
+	inteiro x;
+	leia(x);
+
+	se (x<=0) entao escreval("VALOR DE ENTRADA INCORRETO");
+	senao escreval("SOMA DOS DIVISORES = ", soma_divisores(x)); escreval("PRODUTO DOS DIVISORES = ", multiplicacao_divisores(x)); fimSe
+	
+fimPrincipal
+
+funcao inteiro soma_divisores(inteiro x)
+	inteiro somaDivisores;
+
+
+
+
+
+	inteiro i;
+	somaDivisores = 0;
+	para (i de 1 ate x passo 1) faca
+		se (x%i==0) entao somaDivisores = somaDivisores + i; fimSe
+	fimPara
+	
+	retorna somaDivisores;
+fimFuncao
+
+funcao inteiro multiplicacao_divisores(inteiro x)
+	inteiro multiplicacaoDivisores;
+
+
+
+
+
+	inteiro i;
+	multiplicacaoDivisores = 1;
+	para (i de 1 ate x passo 1) faca
+		se (x%i==0) entao multiplicacaoDivisores = multiplicacaoDivisores*i; fimSe
+	fimPara
+	
+	retorna multiplicacaoDivisores;
+fimFuncao
