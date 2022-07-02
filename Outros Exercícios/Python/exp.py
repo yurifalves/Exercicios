@@ -12,7 +12,12 @@ def desvio_padrao(amostra):
 
 
 def erro_aleatorio(amostra):
-    import statistics, math
-    desvio_padrao = statistics.pstdev(amostra)
-    erro_aleatorio = desvio_padrao/math.sqrt(len(amostra))
+    import math
+    erro_aleatorio = desvio_padrao(amostra)/math.sqrt(len(amostra))
     return erro_aleatorio
+
+
+amostra = [x1, x2, x3, ...]
+print(media(amostra))
+print(desvio_padrao(amostra))
+print(erro_aleatorio(amostra))
