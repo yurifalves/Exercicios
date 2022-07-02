@@ -17,3 +17,9 @@ def tirar_simb(texto: str) -> str:
                 texto = texto[:indice_simbolo+1].replace('$', '\)') + texto[indice_simbolo+1:]
         cont += 1
     return texto
+
+
+texto = r"""
+...
+"""
+print(tirar_simb(texto))
