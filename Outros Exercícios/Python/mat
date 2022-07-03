@@ -1,6 +1,6 @@
 def fib(n: int) -> int:
     """
-    Um número específico da Sequência de Fibonacci
+    Retorna um número específico da Sequência de Fibonacci
 
     POST: https://stackoverflow.com/questions/18172257/efficient-calculation-of-fibonacci-series
     https://stackoverflow.com/questions/18172257/efficient-calculation-of-fibonacci-series/70173360#70173360
