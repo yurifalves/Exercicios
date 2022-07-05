@@ -2,7 +2,6 @@ def fib(n: int) -> int:
     """
     Retorna um número específico da Sequência de Fibonacci
 
-    POST: https://stackoverflow.com/questions/18172257/efficient-calculation-of-fibonacci-series
     https://stackoverflow.com/questions/18172257/efficient-calculation-of-fibonacci-series/70173360#70173360
     """
     if n < 0: return int(pow(-1, (n & 1) + 1)) * fib(-n)
