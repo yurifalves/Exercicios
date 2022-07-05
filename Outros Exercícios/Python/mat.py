@@ -26,7 +26,8 @@ def fib(n: int) -> int:
 def angulo_entre_vetores(vetor_1, vetor_2):
     """
     uv = ||u|| ||v|| cos(θ)
-
+    θ = arccos(uv/||u|| ||v||)
+    
     Retorna o ângulo em graus entre dois vetores n-dimensionais.
     """
     import numpy as np
@@ -35,10 +36,8 @@ def angulo_entre_vetores(vetor_1, vetor_2):
         return 'Vetor de magnitude zero!'
 
     produto_escalar = np.dot(vetor_1, vetor_2)
-
     norma_1 = np.linalg.norm(vetor_1)
     norma_2 = np.linalg.norm(vetor_2)
 
-    cos = produto_escalar/(norma_1*norma_2)
-    angulo = np.degrees(np.arccos(cos))
+    angulo = np.degrees(np.arccos(produto_escalar/(norma_1*norma_2)))
     return angulo
