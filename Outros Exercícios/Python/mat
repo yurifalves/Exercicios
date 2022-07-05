@@ -22,3 +22,24 @@ def fib(n: int) -> int:
 
     # for odd n
     return pow(fib((n >> 1) + 1), 2) + pow(fib(n >> 1), 2)
+
+
+def angulo_entre_vetores(vetor_1, vetor_2):
+    """
+    uv = ||u|| ||v|| cos(θ)
+
+    Retorna o ângulo em graus entre dois vetores n-dimensionais.
+    """
+    import numpy as np
+
+    if np.linalg.norm(vetor_1) == 0 or np.linalg.norm(vetor_2) == 0:
+        return 'Vetor de magnitude zero!'
+
+    produto_escalar = np.dot(vetor_1, vetor_2)
+
+    norma_1 = np.linalg.norm(vetor_1)
+    norma_2 = np.linalg.norm(vetor_2)
+
+    cos = produto_escalar/(norma_1*norma_2)
+    angulo = np.degrees(np.arccos(cos))
+    return angulo
