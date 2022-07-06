@@ -67,9 +67,7 @@ funcao logico valida_data(inteiro dia, inteiro mes, inteiro ano, inteiro hora, i
 	se (mes >= 1 e mes <= 12) entao condicao2 = verdadeiro; senao condicao2 = falso; fimSe
 	se (ano >=0) entao condicao3 = verdadeiro; senao condicao3 = falso; fimSe
     se (hora >= 0 e hora <=23) entao condicao4 = verdadeiro; senao condicao4 = falso; fimSe
-	se (minuto >= 0 e minuto <=59) entao condicao5 = verdadeiro; senao condicao5 = falso; fimSe
+	se (minutos >= 0 e minutos <=59) entao condicao5 = verdadeiro; senao condicao5 = falso; fimSe
 
-    se (condicao1 e condicao2 e condicao3 e condicao4 e condicao5) entao retorna verdadeiro; senao retorna falso;
+    se (condicao1 e condicao2 e condicao3 e condicao4 e condicao5) entao retorna verdadeiro; senao retorna falso; fimSe
 fimFuncao
-
-
