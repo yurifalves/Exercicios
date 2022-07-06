@@ -1,0 +1,31 @@
+algoritmo Verificadata;
+//  Síntese: verifica data informada
+//  Objetivo: levanta informacoes sobre as entradas e diz se está correta ou não
+//  Entrada : o formato a ser verificado
+//  Saída   : validade da data
+
+principal
+	inteiro n;
+	leia(n);
+
+	fibonacci(n);
+
+fimPrincipal
+
+procedimento fibonacci(inteiro n)
+	inteiro i;
+	se (n<=0) entao escreva("VALOR DE N INCORRETO");
+	senao
+		para (i de 1 ate n passo 1) faca
+			se (i==n) entao escreva(fib(i));
+			senao escreva(fib(i), " "); fimSe
+		fimPara
+	fimSe
+	escreval("");
+fimProcedimento
+
+funcao inteiro fib(inteiro n)
+    se (n==1 ou n==2) entao retorna 1;
+	senao retorna fib(n-1)+fib(n-2); fimSe
+    
+fimFuncao
