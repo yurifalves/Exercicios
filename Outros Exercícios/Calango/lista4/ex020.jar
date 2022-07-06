@@ -27,8 +27,11 @@ funcao logico valida_data(inteiro dia, inteiro mes, inteiro ano, inteiro hora, i
 		se (dia >= 1 e dia <=31) entao condicao1 = verdadeiro; senao condicao1 = falso; fimSe
 	fimSe
 	se (mes == 2) entao
-		se (nao(ano%4==0 e ano%100!=0 e ano%400==0) e (dia >= 1 e dia <= 28)) entao condicao1 = verdadeiro; senao condicao1 = falso; fimSe
-		se (((ano%4==0) e (ano%400==0 ou ano%100!=0)) e (dia >= 1 e dia <= 29)) entao condicao1 = verdadeiro; senao condicao1 = falso; fimSe
+		se (isLeapYear(ano)) entao
+			se(dia >=1 e dia<=29) entao condicao1 = verdadeiro; senao condicao1 = falso; fimSe
+		senao
+			se(dia >=1 e dia<=28) entao condicao1 = verdadeiro; senao condicao1 = falso; fimSe
+		fimSe
 	fimSe
 	se (mes == 3) entao
 		se (dia >= 1 e dia <=31) entao condicao1 = verdadeiro; senao condicao1 = falso; fimSe
@@ -61,7 +64,7 @@ funcao logico valida_data(inteiro dia, inteiro mes, inteiro ano, inteiro hora, i
 		se (dia >= 1 e dia <=31) entao condicao1 = verdadeiro; senao condicao1 = falso; fimSe
 	fimSe
 	se (mes < 1 ou mes > 12) entao
-		condicao1 = verdadeiro;
+		condicao1 = falso;
 	fimSe
 
 	se (mes >= 1 e mes <= 12) entao condicao2 = verdadeiro; senao condicao2 = falso; fimSe
@@ -70,4 +73,8 @@ funcao logico valida_data(inteiro dia, inteiro mes, inteiro ano, inteiro hora, i
 	se (minutos >= 0 e minutos <=59) entao condicao5 = verdadeiro; senao condicao5 = falso; fimSe
 
     se (condicao1 e condicao2 e condicao3 e condicao4 e condicao5) entao retorna verdadeiro; senao retorna falso; fimSe
+fimFuncao
+
+funcao logico isLeapYear(inteiro ano)
+	se ((ano%400==0 ou ano%100!=0) e (ano%4==0)) entao retorna verdadeiro; senao retorna falso; fimSe
 fimFuncao
