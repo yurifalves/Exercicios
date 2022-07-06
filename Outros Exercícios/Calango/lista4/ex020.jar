@@ -1,0 +1,75 @@
+algoritmo Verificadata;
+//  Síntese: verifica data informada
+//  Objetivo: levanta informacoes sobre as entradas e diz se está correta ou não
+//  Entrada : o formato a ser verificado
+//  Saída   : validade da data
+
+principal
+	inteiro dia, mes, ano, hora, minutos;
+	leia(dia);
+	leia(mes);
+	leia(ano);
+	leia(hora);
+	leia(minutos);
+
+	se (valida_data(dia, mes, ano, hora, minutos)) entao
+		escreval("DATA CORRETA");
+	senao
+		escreval("DATA INCORRETA");
+	fimSe
+
+fimPrincipal
+
+funcao logico valida_data(inteiro dia, inteiro mes, inteiro ano, inteiro hora, inteiro minutos)
+	logico condicao1, condicao2, condicao3, condicao4, condicao5;
+
+	se (mes == 1) entao
+		se (dia >= 1 e dia <=31) entao condicao1 = verdadeiro; senao condicao1 = falso; fimSe
+	fimSe
+	se (mes == 2) entao
+		se (nao(ano%4==0 e ano%100!=0 e ano%400==0) e (dia >= 1 e dia <= 28)) entao condicao1 = verdadeiro; senao condicao1 = falso; fimSe
+		se (((ano%4==0) e (ano%400==0 ou ano%100!=0)) e (dia >= 1 e dia <= 29)) entao condicao1 = verdadeiro; senao condicao1 = falso; fimSe
+	fimSe
+	se (mes == 3) entao
+		se (dia >= 1 e dia <=31) entao condicao1 = verdadeiro; senao condicao1 = falso; fimSe
+	fimSe
+	se (mes == 4) entao
+		se (dia >= 1 e dia <=30) entao condicao1 = verdadeiro; senao condicao1 = falso; fimSe
+	fimSe
+	se (mes == 5) entao
+		se (dia >= 1 e dia <=31) entao condicao1 = verdadeiro; senao condicao1 = falso; fimSe
+	fimSe
+	se (mes == 6) entao
+		se (dia >= 1 e dia <=30) entao condicao1 = verdadeiro; senao condicao1 = falso; fimSe
+	fimSe
+	se (mes == 7) entao
+		se (dia >= 1 e dia <=31) entao condicao1 = verdadeiro; senao condicao1 = falso; fimSe
+	fimSe
+	se (mes == 8) entao
+		se (dia >= 1 e dia <=31) entao condicao1 = verdadeiro; senao condicao1 = falso; fimSe
+	fimSe
+	se (mes == 9) entao
+		se (dia >= 1 e dia <=30) entao condicao1 = verdadeiro; senao condicao1 = falso; fimSe
+	fimSe
+	se (mes == 10) entao
+		se (dia >= 1 e dia <=31) entao condicao1 = verdadeiro; senao condicao1 = falso; fimSe
+	fimSe
+	se (mes == 11) entao
+		se (dia >= 1 e dia <=30) entao condicao1 = verdadeiro; senao condicao1 = falso; fimSe
+	fimSe
+	se (mes == 12) entao
+		se (dia >= 1 e dia <=31) entao condicao1 = verdadeiro; senao condicao1 = falso; fimSe
+	fimSe
+	se (mes < 1 ou mes > 12) entao
+		condicao1 = verdadeiro;
+	fimSe
+
+	se (mes >= 1 e mes <= 12) entao condicao2 = verdadeiro; senao condicao2 = falso; fimSe
+	se (ano >=0) entao condicao3 = verdadeiro; senao condicao3 = falso; fimSe
+    se (hora >= 0 e hora <=23) entao condicao4 = verdadeiro; senao condicao4 = falso; fimSe
+	se (minuto >= 0 e minuto <=59) entao condicao5 = verdadeiro; senao condicao5 = falso; fimSe
+
+    se (condicao1 e condicao2 e condicao3 e condicao4 e condicao5) entao retorna verdadeiro; senao retorna falso;
+fimFuncao
+
+
