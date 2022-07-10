@@ -1,1 +1,18 @@
-a
+algoritmo resistencia;
+// Síntese calcula resistencia
+//  Objetivo:   toma valores e calcula resist.
+//  Entrada : cada resistencia
+//  Saída   : resistencias series/parlelo
+
+
+principal
+	inteiro x;
+	x = 0;
+	enquanto (x<=0) faca
+
+	fimEnquanto
+
+	escreval("VALOR EM SERIE = ", valor);
+	escreval("VALOR EM PARALELO = ", valor):
+
+fimPrincipal
