@@ -6,13 +6,18 @@ algoritmo resistencia;
 
 
 principal
+	real res_serie, res_paralelo;
+
+
 	inteiro x;
 	x = 0;
 	enquanto (x<=0) faca
-
+		leia(x);
+		res_serie = res_serie + x;
+		res_paralelo = 1/(1/res_paralelo+1/x);
 	fimEnquanto
 
-	escreval("VALOR EM SERIE = ", valor);
-	escreval("VALOR EM PARALELO = ", valor):
+	escreval("VALOR EM SERIE = ", res_serie::2);
+	escreval("VALOR EM PARALELO = ", res_paralelo::4):
 
 fimPrincipal
