@@ -25,10 +25,12 @@ def fib(n: int) -> int:
 
 def angulo_entre_vetores(vetor_1, vetor_2):
     """
-    uv = ||u|| ||v|| cos(θ)
-    θ = arccos(uv/||u|| ||v||)
-    
-    Retorna o ângulo em graus entre dois vetores n-dimensionais.
+    Retorna o ângulo em graus entre dois vetores
+    u = (u₁, u₂, u₃, ..., uₙ)  e  v = (v₁, v₂, v₃, ..., vₙ)
+    n-dimensionais.
+
+    u·v = ||u|| ||v|| cos(θ)
+    θ = arccos(u·v/||u|| ||v||)
     """
     import numpy as np
 
@@ -39,5 +41,33 @@ def angulo_entre_vetores(vetor_1, vetor_2):
     norma_1 = np.linalg.norm(vetor_1)
     norma_2 = np.linalg.norm(vetor_2)
 
-    angulo = np.degrees(np.arccos(produto_escalar/(norma_1*norma_2)))
+    angulo = np.degrees(np.arccos(produto_escalar / (norma_1 * norma_2)))
     return angulo
+
+
+def produto_escalar(vetor_1, vetor_2):
+    """
+    Retorna o Produo Escalar entre 2 vetores
+    u = (u₁, u₂, u₃, ..., uₙ)  e  v = (v₁, v₂, v₃, ..., vₙ)
+    n-dimensionais.
+
+    uv = ||u|| ||v|| cos(θ) = u₁v₁+u₂v₂+u₃v₃+...+uₙvₙ
+    """
+    import numpy as np
+
+    produto_escalar = np.dot(vetor_1, vetor_2)
+    return produto_escalar
+
+
+def produto_vetorial(vetor_1, vetor_2):
+    """
+    Retorna o Produo Vetorial entre 2 vetores
+    u = (u₁, u₂, u₃)  e  v = (v₁, v₂, v₃)
+    tridimensionais.
+
+    u×v = (u₂v₃-u₃v₂, u₃v₁-u₁v₃, u₁v₂-u₂v₁)
+    """
+    import numpy as np
+
+    produto_vetorial = np.cross(vetor_1, vetor_2)
+    return produto_vetorial
