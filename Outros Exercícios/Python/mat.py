@@ -29,7 +29,6 @@ def angulo_entre_vetores(vetor_1, vetor_2):
     u = (u₁, u₂, u₃, ..., uₙ)  e  v = (v₁, v₂, v₃, ..., vₙ)
     n-dimensionais.
 
-    u·v = ||u|| ||v|| cos(θ)
     θ = arccos(u·v/||u|| ||v||)
     """
     import numpy as np
@@ -51,7 +50,7 @@ def produto_escalar(vetor_1, vetor_2):
     u = (u₁, u₂, u₃, ..., uₙ)  e  v = (v₁, v₂, v₃, ..., vₙ)
     n-dimensionais.
 
-    uv = ||u|| ||v|| cos(θ) = u₁v₁+u₂v₂+u₃v₃+...+uₙvₙ
+    u·v = ||u|| ||v|| cos(θ) = u₁v₁+u₂v₂+u₃v₃+...+uₙvₙ
     """
     import numpy as np
 
