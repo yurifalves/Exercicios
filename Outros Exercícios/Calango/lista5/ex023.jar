@@ -1,0 +1,23 @@
+algoritmo sequenciaCaract;
+// Síntese: Avalia 2 sequências de caracteres
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	inteiro vetor1
+
+fimPrincipal
+
+funcao inteiro compara_sequencias(vetor1, vetor2, N)
+	inteiro v;
+
+	inteiro i;
+	v = 0;
+	para (i de 0 a N-1 passo 1) faca
+		se (vetor1[i]==vetor2[i]) entao v = v + 1;
+	fimPara
+
+	se (v==N) entao retorna 1; senao retorna 0; fimSe
+fimFuncao
