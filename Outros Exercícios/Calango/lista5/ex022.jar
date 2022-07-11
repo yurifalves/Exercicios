@@ -6,13 +6,19 @@ algoritmo sequenciaCaract;
 
 
 principal
-	inteiro vetor1[2], vetor2[2];
-	vetor1[0] = 1;
-	vetor1[1] = 2;
-	vetor2[0] = 1;
-	vetor2[1]= 2;
+	inteiro vetor1[100], vetor2[100];
+	inteiro N;
+
+
+
+	inteiro i;
+	leia(N);
+	para (i de 0 ate N-1 passo 1) faca
+		leia(vetor1[i]);
+		leia(vetor2[i]);
+	fimPara
 	
-	escreval(compara_sequencias(vetor1, vetor2, 2));
+	escreval(compara_sequencias(vetor1, vetor2, N));
 
 fimPrincipal
 
