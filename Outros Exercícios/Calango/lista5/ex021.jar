@@ -13,14 +13,13 @@ principal
 	inteiro x;
 	i = 0;
 	x = 1;
-	enquanto (x!=0) faca
+	enquanto (x>0) faca
 		leia(x);
-		resistencias[i] = x;
-		i = i + 1;
+		se (x>0) entao resistencias[i] = x; i = i+1; fimSe
 	fimEnquanto
 
-	escreval("VALOR EM SERIE = ", resistencia_serie(resistencias, i+1)::2);
-	escreval("VALOR EM PARALELO = ", resistencia_paralelo(resistencias, i+1)::4);
+	escreval("VALOR EM SERIE = ", resistencia_serie(resistencias, i));
+	escreval("VALOR EM PARALELO = ", resistencia_paralelo(resistencias, i)::4);
 fimPrincipal
 
 funcao real resistencia_serie(real vetor[], inteiro N)
