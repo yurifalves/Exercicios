@@ -6,17 +6,23 @@ algoritmo sequenciaCaract;
 
 
 principal
-	inteiro vetor1
+	inteiro vetor1[2], vetor2[2];
+	vetor1[0] = 1;
+	vetor1[1] = 2;
+	vetor2[0] = 1;
+	vetor2[1]= 2;
+	
+	escreval(compara_sequencias(vetor1, vetor2, 2));
 
 fimPrincipal
 
-funcao inteiro compara_sequencias(vetor1, vetor2, N)
+funcao inteiro compara_sequencias(inteiro vetor1[], inteiro vetor2[], inteiro N)
 	inteiro v;
 
 	inteiro i;
 	v = 0;
-	para (i de 0 a N-1 passo 1) faca
-		se (vetor1[i]==vetor2[i]) entao v = v + 1;
+	para (i de 0 ate N-1 passo 1) faca
+		se (vetor1[i]==vetor2[i]) entao v = v + 1; fimSe
 	fimPara
 
 	se (v==N) entao retorna 1; senao retorna 0; fimSe
