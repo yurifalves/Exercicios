@@ -6,13 +6,18 @@ algoritmo resistencia;
 
 
 principal
-	
+	real t[3];
+	t[0] = 5.2;
+	t[1] = 9.3;
+
+	escreval(resistencia_serie(t, 2));
+	escreval(resistencia_paralelo(t, 2));
 
 fimPrincipal
 
 funcao real resistencia_serie(real vetor[], inteiro N)
 	inteiro i;
-	inteiro res_s;
+	real res_s;
 	res_s = 0;
 
 	para (i de 0 ate N-1 passo 1) faca
@@ -20,5 +25,15 @@ funcao real resistencia_serie(real vetor[], inteiro N)
 	fimPara
 
 	retorna res_s;
-	
+fimFuncao
+
+funcao real resistencia_paralelo(real vetor[], inteiro N)
+	inteiro i;
+	real res_p, soma;
+	soma = 0;
+	para (i de 0 ate N-1 passo 1) faca
+		soma = soma + 1/vetor[i];
+	fimPara
+	res_p = exp(soma, -1);
+	retorna res_p;
 fimFuncao
