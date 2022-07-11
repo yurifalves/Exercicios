@@ -6,13 +6,21 @@ algoritmo resistencia;
 
 
 principal
-	real t[3];
-	t[0] = 5.2;
-	t[1] = 9.3;
+	real resistencias[100];
 
-	escreval(resistencia_serie(t, 2));
-	escreval(resistencia_paralelo(t, 2));
 
+	inteiro i;
+	inteiro x;
+	i = 0;
+	x = 1;
+	enquanto (x!=0) faca
+		leia(x);
+		resistencias[i] = x;
+		i = i + 1;
+	fimEnquanto
+
+	escreval("VALOR EM SERIE = ", resistencia_serie(resistencias, i+1)::2);
+	escreval("VALOR EM PARALELO = ", resistencia_paralelo(resistencias, i+1)::4);
 fimPrincipal
 
 funcao real resistencia_serie(real vetor[], inteiro N)
