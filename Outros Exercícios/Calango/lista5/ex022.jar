@@ -1,8 +1,8 @@
 algoritmo sequenciaCaract;
 // Síntese: Avalia 2 sequências de caracteres
-//  Objetivo:  
-//  Entrada :
-//  Saída   :
+//  Objetivo:  ve se 2 sequencias sao iguais
+//  Entrada : as sequenciasd
+//  Saída   : confirmacao se sao ou nao iguais
 
 
 principal
@@ -15,6 +15,8 @@ principal
 	leia(N);
 	para (i de 0 ate N-1 passo 1) faca
 		leiaCaracter(vetor1[i]);
+	fimPara
+	para (i de 0 ate N-1 passo 1) faca
 		leiaCaracter(vetor2[i]);
 	fimPara
 
@@ -29,7 +31,7 @@ funcao inteiro compara_sequencias(caracter vetor1[], caracter vetor2[], inteiro 
 	inteiro i;
 	v = 0;
 	para (i de 0 ate N-1 passo 1) faca
-		se (vetor1[i]==vetor2[i]) entao v = v + 1; fimSe
+		se (caracterAscii(vetor1[i])==caracterAscii(vetor2[i])) entao v = v + 1; fimSe
 	fimPara
 
 	se (v==N) entao retorna 1; senao retorna 0; fimSe
