@@ -6,7 +6,7 @@ algoritmo sequenciaCaract;
 
 
 principal
-	inteiro vetor1[100], vetor2[100];
+	caracter vetor1[100], vetor2[100];
 	inteiro N;
 
 
@@ -14,15 +14,16 @@ principal
 	inteiro i;
 	leia(N);
 	para (i de 0 ate N-1 passo 1) faca
-		leia(vetor1[i]);
-		leia(vetor2[i]);
+		leiaCaracter(vetor1[i]);
+		leiaCaracter(vetor2[i]);
 	fimPara
-	
-	escreval(compara_sequencias(vetor1, vetor2, N));
+
+	se (compara_sequencias(vetor1, vetor2, N)==0) entao escreval("As sequencias sao diferentes!");
+	senao escreval("As sequencias sao iguais!"); fimSe
 
 fimPrincipal
 
-funcao inteiro compara_sequencias(inteiro vetor1[], inteiro vetor2[], inteiro N)
+funcao inteiro compara_sequencias(caracter vetor1[], caracter vetor2[], inteiro N)
 	inteiro v;
 
 	inteiro i;
