@@ -1,0 +1,21 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	inteiro idades[100];
+	real pesos[100];
+
+	inteiro idade_maiorpeso;
+	real peso_menoridade;
+
+	inteiro N;
+	leia(N);
+
+	escreval("IDADE DA PESSOA DE MAIOR PESO = ", idade_maiorpeso);
+	escreval("PESO DA PESSOA DE MENOR IDADE = ", peso_menoridade::2);
+
+fimPrincipal
