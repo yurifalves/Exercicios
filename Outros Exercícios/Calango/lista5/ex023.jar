@@ -8,14 +8,37 @@ algoritmo semNome;
 principal
 	inteiro idades[100];
 	real pesos[100];
-
 	inteiro idade_maiorpeso;
 	real peso_menoridade;
+	inteiro i;
 
 	inteiro N;
 	leia(N);
 
+	para (i de 0 ate N-1 passo 1) faca
+		leia(idades[i]);
+		leia(pesos[i]);
+	fimPara
+
+	idade_maiorpeso = 0;
+	peso_menoridade = 0;
 	escreval("IDADE DA PESSOA DE MAIOR PESO = ", idade_maiorpeso);
 	escreval("PESO DA PESSOA DE MENOR IDADE = ", peso_menoridade::2);
 
+	exibirArrayInteiro(idades, 3);
+
 fimPrincipal
+
+procedimento exibirArrayInteiro(inteiro vetor[], inteiro tamanhoVetor)
+	inteiro i;
+	texto arrayFormatado;
+	arrayFormatado = "";
+	para (i de 0 ate tamanhoVetor-1 passo 1) faca
+		se (i==0) entao arrayFormatado = "{" + vetor[i];
+		senao
+			se (i==tamanhoVetor-1) entao arrayFormatado = arrayFormatado + ", " + vetor[i] + "}";
+			senao arrayFormatado = arrayFormatado + ", " + vetor[i]; fimSe
+		fimSe
+	fimPara
+	escreval(arrayFormatado);
+fimProcedimento
