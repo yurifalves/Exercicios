@@ -21,7 +21,7 @@ principal
 	fimPara
 
 	idade_maiorpeso = idades[idxMaxArrayReal(pesos, N)];
-	peso_menoridade = pesos[idxMinArrayReal(idades, N)];
+	peso_menoridade = pesos[idxMinArrayInteiro(idades, N)];
 	escreval("IDADE DA PESSOA DE MAIOR PESO = ", idade_maiorpeso);
 	escreval("PESO DA PESSOA DE MENOR IDADE = ", peso_menoridade::2);
 
@@ -40,7 +40,7 @@ funcao inteiro idxMaxArrayReal(real vetor[], inteiro tamanhoVetor)
 	retorna idxMax;
 fimFuncao
 
-funcao inteiro idxMinArrayReal(real vetor[], inteiro tamanhoVetor)
+funcao inteiro idxMinArrayInteiro(inteiro vetor[], inteiro tamanhoVetor)
 	inteiro i;
 	inteiro idxMin;
 
