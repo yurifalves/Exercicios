@@ -25,7 +25,7 @@ principal
 	escreval("IDADE DA PESSOA DE MAIOR PESO = ", idade_maiorpeso);
 	escreval("PESO DA PESSOA DE MENOR IDADE = ", peso_menoridade::2);
 
-	exibirArrayInteiro(idades, 3);
+	exibirArrayInteiro(idades, 7);
 
 fimPrincipal
 
@@ -34,11 +34,9 @@ procedimento exibirArrayInteiro(inteiro vetor[], inteiro tamanhoVetor)
 	texto arrayFormatado;
 	arrayFormatado = "";
 	para (i de 0 ate tamanhoVetor-1 passo 1) faca
-		se (i==0) entao arrayFormatado = "{" + vetor[i];
-		senao
-			se (i==tamanhoVetor-1) entao arrayFormatado = arrayFormatado + ", " + vetor[i] + "}";
-			senao arrayFormatado = arrayFormatado + ", " + vetor[i]; fimSe
-		fimSe
+		se (i!=tamanhoVetor-1) entao arrayFormatado = arrayFormatado + vetor[i] + ", ";
+		senao arrayFormatado = arrayFormatado + vetor[i]; fimSe
 	fimPara
+	arrayFormatado = "{" + arrayFormatado + "}";
 	escreval(arrayFormatado);
 fimProcedimento
