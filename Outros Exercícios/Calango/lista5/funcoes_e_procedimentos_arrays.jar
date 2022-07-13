@@ -39,3 +39,31 @@ funcao inteiro idxMinArrayInteiro(inteiro vetor[], inteiro tamanhoVetor)
 	fimPara
 	retorna idxMin;
 fimFuncao
+
+funcao inteiro maxArrayInteiro(inteiro vetor[], inteiro tamanhoVetor)
+  //Retorna o valor máximo de um array inteiro.
+
+	inteiro i;
+	inteiro max;
+	para (i de 0 ate tamanhoVetor-1 passo 1) faca
+		se (i==0) entao max = vetor[i];
+		senao
+			se (vetor[i] > max) entao max = vetor[i]; fimSe
+		fimSe
+	fimPara
+	retorna max;
+fimFuncao
+
+funcao inteiro idxMaxArrayInteiro(inteiro vetor[], inteiro tamanhoVetor)
+  // Retorna o valor do índice correspondente ao maior valor do array inteiro.
+	inteiro i;
+	inteiro idxMax;
+
+	para (i de 0 ate tamanhoVetor-1 passo 1) faca
+		se (i==0) entao idxMax = 0;
+		senao
+			se (vetor[i] > vetor[idxMax]) entao idxMax = i; fimSe
+		fimSe
+	fimPara
+	retorna idxMax;
+fimFuncao
