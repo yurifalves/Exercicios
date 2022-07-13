@@ -6,41 +6,46 @@ algoritmo resistencia;
 
 
 principal
-	real resistencias[100];
-
-
+	// Declarações
+	
+	real resistencias[7];
 	inteiro i;
-	inteiro x;
+	real x;
 	i = 0;
-	x = 1;
-	enquanto (x>0) faca
+	// Instruções
+	faca
 		leia(x);
-		se (x>0) entao resistencias[i] = x; i = i+1; fimSe
-	fimEnquanto
+		se(x >0) entao
+			resistencias[i] = x;
+			i = i+1;
+		fimSe
+	enquanto (x >0); 
+	
 
-	escreval("VALOR EM SERIE = ", resistencia_serie(resistencias, i));
+	escreval("VALOR EM SERIE = ", resistencia_serie(resistencias, i)::2);
 	escreval("VALOR EM PARALELO = ", resistencia_paralelo(resistencias, i)::4);
+
+	
+
 fimPrincipal
-
-funcao real resistencia_serie(real vetor[], inteiro N)
+funcao real resistencia_serie(real vetor[], inteiro tamanho_vetor)
+	real resistencia_s;
 	inteiro i;
-	real res_s;
-	res_s = 0;
-
-	para (i de 0 ate N-1 passo 1) faca
-		res_s = res_s + vetor[i];
+	resistencia_s = 0;
+	para (i de 0 ate tamanho_vetor-1 passo 1) faca
+		resistencia_s = resistencia_s + vetor[i];
 	fimPara
-
-	retorna res_s;
+	retorna resistencia_s;
 fimFuncao
-
-funcao real resistencia_paralelo(real vetor[], inteiro N)
+funcao real resistencia_paralelo(real vetor[], inteiro tamanho_vetor)
 	inteiro i;
-	real res_p, soma;
+	real resistencia_p;
+	real soma;
 	soma = 0;
-	para (i de 0 ate N-1 passo 1) faca
+	para (i de 0 ate tamanho_vetor-1 passo 1) faca
 		soma = soma + 1/vetor[i];
 	fimPara
-	res_p = exp(soma, -1);
-	retorna res_p;
+	
+	resistencia_p = exp(soma, -1);
+	retorna resistencia_p;
 fimFuncao
