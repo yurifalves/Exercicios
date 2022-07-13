@@ -25,3 +25,17 @@ funcao inteiro minArrayInteiro(inteiro vetor[], inteiro tamanhoVetor)
 	fimPara
 	retorna min;
 fimFuncao
+
+funcao inteiro idxMinArrayInteiro(inteiro vetor[], inteiro tamanhoVetor)
+  // Retorna o valor do índice correspondente ao menor valor do array inteiro.
+	inteiro i;
+	inteiro idxMin;
+
+	para (i de 0 ate tamanhoVetor-1 passo 1) faca
+		se (i==0) entao idxMin = 0;
+		senao
+			se (vetor[i] < vetor[idxMin]) entao idxMin = i; fimSe
+		fimSe
+	fimPara
+	retorna idxMin;
+fimFuncao
