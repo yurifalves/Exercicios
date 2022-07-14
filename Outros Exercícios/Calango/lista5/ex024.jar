@@ -1,8 +1,8 @@
-algoritmo semNome;
-// Síntese
-//  Objetivo:  
-//  Entrada :
-//  Saída   :
+algoritmo ordenaSequencia;
+// Ordenar sequeência
+//  Objetivo:  escreve na tela a sequencia ordenada conforme solicitado
+//  Entrada :  uma sequencia
+//  Saída   :  aquela sequencia em ordem crescente seguidos de quebra de linha
 
 
 principal
