@@ -1,0 +1,66 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	inteiro N, sequencia[100], min, max, i;
+
+	leia(N);
+	para (i de 0 ate N-1 passo 1) faca
+		leia(sequencia[i]);
+	fimPara
+
+	max = maxArrayInteiro(sequencia, 4);
+	
+	para (i de 0 ate N-1 passo 1) faca
+		min = minArrayInteiro(sequencia, N);
+		escreval(min);
+		sequencia[idxMinArrayInteiro(sequencia, N)] = max+1;
+	fimPara
+
+fimPrincipal
+
+funcao inteiro minArrayInteiro(inteiro vetor[], inteiro tamanhoVetor)
+  //Retorna o valor mínimo de um array inteiro.
+
+	inteiro i;
+	inteiro min;
+	para (i de 0 ate tamanhoVetor-1 passo 1) faca
+		se (i==0) entao min = vetor[i];
+		senao
+			se (vetor[i] < min) entao min = vetor[i]; fimSe
+		fimSe
+	fimPara
+	retorna min;
+fimFuncao
+
+funcao inteiro idxMinArrayInteiro(inteiro vetor[], inteiro tamanhoVetor)
+  // Retorna o valor do índice correspondente ao menor valor do array inteiro.
+	inteiro i;
+	inteiro idxMin;
+
+	para (i de 0 ate tamanhoVetor-1 passo 1) faca
+		se (i==0) entao idxMin = 0;
+		senao
+			se (vetor[i] < vetor[idxMin]) entao idxMin = i; fimSe
+		fimSe
+	fimPara
+	retorna idxMin;
+fimFuncao
+
+funcao inteiro maxArrayInteiro(inteiro vetor[], inteiro tamanhoVetor)
+  //Retorna o valor máximo de um array inteiro.
+
+	inteiro i;
+	inteiro max;
+	para (i de 0 ate tamanhoVetor-1 passo 1) faca
+		se (i==0) entao max = vetor[i];
+		senao
+			se (vetor[i] > max) entao max = vetor[i]; fimSe
+		fimSe
+	fimPara
+	retorna max;
+fimFuncao
