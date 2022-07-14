@@ -7,7 +7,8 @@ algoritmo classificacaoConcurso;
 
 principal
 	texto aluno, nomes[100];
-	inteiro N, notas[100], min, max, i;
+	real notas[100];
+	inteiro N, min, max, i;
 
 	leia(N);
 	para (i de 0 ate N-1 passo 1) faca
@@ -15,20 +16,18 @@ principal
 		leia(notas[i]);
 	fimPara
 
-	min = minArrayInteiro(notas, N);
+	min = minArrayReal(notas, N);
 	
 	para (i de 0 ate N-1 passo 1) faca
-		max = maxArrayInteiro(notas, N);
-		aluno = nomes[idxMaxArrayInteiro(notas, N)];
+		max = maxArrayReal(notas, N);
+		aluno = nomes[idxMaxArrayReal(notas, N)];
 		escreval(i+1 + " " + "-" + " " + aluno);
-		notas[idxMaxArrayInteiro(notas, N)] = min-1;
+		notas[idxMaxArrayReal(notas, N)] = min-1;
 	fimPara
 
 fimPrincipal
 
-funcao inteiro minArrayInteiro(inteiro vetor[], inteiro tamanhoVetor)
-  //Retorna o valor mínimo de um array inteiro.
-
+funcao inteiro minArrayReal(real vetor[], inteiro tamanhoVetor)
 	inteiro i;
 	inteiro min;
 	para (i de 0 ate tamanhoVetor-1 passo 1) faca
@@ -40,9 +39,7 @@ funcao inteiro minArrayInteiro(inteiro vetor[], inteiro tamanhoVetor)
 	retorna min;
 fimFuncao
 
-funcao inteiro maxArrayInteiro(inteiro vetor[], inteiro tamanhoVetor)
-  //Retorna o valor máximo de um array inteiro.
-
+funcao inteiro maxArrayReal(real vetor[], inteiro tamanhoVetor)
 	inteiro i;
 	inteiro max;
 	para (i de 0 ate tamanhoVetor-1 passo 1) faca
@@ -54,8 +51,7 @@ funcao inteiro maxArrayInteiro(inteiro vetor[], inteiro tamanhoVetor)
 	retorna max;
 fimFuncao
 
-funcao inteiro idxMaxArrayInteiro(inteiro vetor[], inteiro tamanhoVetor)
-  // Retorna o valor do índice correspondente ao maior valor do array inteiro.
+funcao inteiro idxMaxArrayReal(real vetor[], inteiro tamanhoVetor)
 	inteiro i;
 	inteiro idxMax;
 
