@@ -13,7 +13,7 @@ principal
 		leia(sequencia[i]);
 	fimPara
 
-	max = maxArrayInteiro(sequencia, 4);
+	max = maxArrayInteiro(sequencia, N);
 	
 	para (i de 0 ate N-1 passo 1) faca
 		min = minArrayInteiro(sequencia, N);
