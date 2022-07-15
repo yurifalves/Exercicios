@@ -27,14 +27,8 @@ principal
     	fimEnquanto
 
     	// Só chega aqui, caso o usuário passe a inserir de fato uma opção válida (1) ou (2)
-    	escolha (opcao)
-    	caso 1
-        	matrizes();
-        	interrompa;
-    	caso 2
-        	vetores();
-        	interrompa;
-        fimEscolha
+		se (opcao == 1) entao matrizes(); fimSe
+		se (opcao == 2) entao vetores(); fimSe
 	fimEscolha
 
 fimPrincipal
