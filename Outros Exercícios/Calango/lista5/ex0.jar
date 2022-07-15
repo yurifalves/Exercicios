@@ -1,8 +1,8 @@
-algoritmo semNome;
-// Síntese
-//  Objetivo:  
-//  Entrada :
-//  Saída   :
+algoritmo AlgebraLinear;
+// Calculadora de vetores, considerando o Espaço Vetorial Euclidiano R^n
+//  Objetivo:  Calcular propriedades relativas entre 2 vetores definidos em R^n
+//  Entrada :  As componentes de cada vetor
+//  Saída   :  O cálculo desejado pelo usuário
 
 
 principal
