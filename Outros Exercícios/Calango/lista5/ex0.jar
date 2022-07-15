@@ -11,7 +11,17 @@ principal
 
 	// Instruções
 
+	escreval("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+	escreval(" CALCULADORA ÁLGEBRA LINEAR ");
+	escreval("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+
+	escreval("Escolha uma OPÇÃO: ");
+	escreval("(1) Calculadora de Matrizes");
+	escreval("(2) Calculadora de Vetores");
+	escreva("--> ");
 	leia(opcao);
+
+	escreval("");
 
 	escolha (opcao)
     caso 1
@@ -34,7 +44,7 @@ principal
 fimPrincipal
 
 procedimento matrizes()
-	escreval("CLACULADORA MATRIZES");
+	escreval("CACULADORA MATRIZES");
 fimProcedimento
 
 procedimento vetores()
