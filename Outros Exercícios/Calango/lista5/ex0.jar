@@ -11,19 +11,17 @@ principal
 
 	// Instruções
 
-	escreval("=-=-=-=-=-=-=-=-=-=-=-=-=");
-	escreval(" CALCULADORA DE VETORES ");
-	escreval("=-=-=-=-=-=-=-=-=-=-=-=-=");
+	escreval("=-=-=-=-=-=-=-=-=-=-=-=-=-");
+	escreval("  CALCULADORA DE VETORES  ");
+	escreval("=-=-=-=-=-=-=-=-=-=-=-=-=-");
 
-	inputVetores()
-
-	fimEscolha
+	inputVetores();
 
 fimPrincipal
 
 procedimento inputVetores()
 	inteiro n;  // número de componentes dos vetores que participarão do cálculo
-	inteiro u[100], v[100];  // Os dois vetores em R^n, u=(u_1, u_2, ..., u_n) e v=(v_1, v_2, ..., v_n), onde 0 ≤ n ≤ 100
+	real u[100], v[100];  // Os dois vetores em R^n, u=(u_1, u_2, ..., u_n) e v=(v_1, v_2, ..., v_n), onde 0 ≤ n ≤ 100
 	
 	inteiro i;
 	escreval("CALCULADORA VETORES");
@@ -54,8 +52,8 @@ funcao texto formatarVetor(real array[], inteiro tamanhoVetor)
 	texto arrayFormatado;
 	arrayFormatado = "";
 	para (i de 0 ate tamanhoVetor-1 passo 1) faca
-		se (i!=tamanhoVetor-1) entao arrayFormatado = arrayFormatado + vetor[i] + ", ";
-		senao arrayFormatado = arrayFormatado + vetor[i]; fimSe
+		se (i!=tamanhoVetor-1) entao arrayFormatado = arrayFormatado + array[i] + ", ";
+		senao arrayFormatado = arrayFormatado + array[i]; fimSe
 	fimPara
 	arrayFormatado = "(" + arrayFormatado + ")";
 	retorna arrayFormatado;
