@@ -48,5 +48,37 @@ procedimento matrizes()
 fimProcedimento
 
 procedimento vetores()
+	inteiro n;  // número de componentes dos vetores que participarão do cálculo
+	inteiro u, v;  // Os dois vetores em R^n, u=(u_1, u_2, ..., u_n) e v=(v_1, v_2, ..., v_n)
+	
+	inteiro i;
 	escreval("CALCULADORA VETORES");
+	escreval("");
+	escreva("Insira o Número de componentes dos vetores: ");
+
+	escreval("Insira as", " ", n, " ", "componentes do primeiro vetor");
+	para (i de 0 a n-1 passo 1) faca
+		leia(u[i]);
+	fimPara
+	escreval("Insira as", " ", n, " ", "componentes do primeiro vetor");
+	para (i de 0 a n-1 passo 1) faca
+		leia(v[i]);
+	fimPara
+	escreval("Os vetores inseridos foram", "u = ", exibirVetor(u, n));
+	escreval("Os vetores inseridos foram", "v = ", exibirVetor(v, n));
+	
+fimProcedimento
+
+procedimento exibirVetor(inteiro vetor[], inteiro tamanhoVetor)
+  // Retorna a string "[componente_1, componente_2, ..., componente_n]" correspondente à um vetor em R^n, ou seja, de n componentes
+  
+	inteiro i;
+	texto arrayFormatado;
+	arrayFormatado = "";
+	para (i de 0 ate tamanhoVetor-1 passo 1) faca
+		se (i!=tamanhoVetor-1) entao arrayFormatado = arrayFormatado + vetor[i] + ", ";
+		senao arrayFormatado = arrayFormatado + vetor[i]; fimSe
+	fimPara
+	arrayFormatado = "(" + arrayFormatado + ")";
+	escreval(arrayFormatado);
 fimProcedimento
