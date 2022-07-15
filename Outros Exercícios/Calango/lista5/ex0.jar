@@ -1,1 +1,35 @@
-a
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+	inteiro opcao;
+
+	// Instruções
+
+	leia(opcao);
+
+	escolha (opcao)
+    caso 1
+        matrizes()
+        interrompa;
+    caso 2
+        vetores()
+        interrompa;
+    outroCaso
+        escreval("POR FAVOR ESCOLHA UMA OPÇÃO VÁLIDA, (1) Para a calculadora de Matrizes e (2) Para a calculadora de Vetores);
+	fimEscolha
+
+fimPrincipal
+
+procedimento matrizes()
+	...
+fimProcedimento
+
+procedimento vetores()
+	...
+fimProcedimento
