@@ -15,21 +15,34 @@ principal
 
 	escolha (opcao)
     caso 1
-        matrizes()
+        matrizes();
         interrompa;
     caso 2
-        vetores()
+        vetores();
         interrompa;
     outroCaso
-        escreval("POR FAVOR ESCOLHA UMA OPÇÃO VÁLIDA, (1) Para a calculadora de Matrizes e (2) Para a calculadora de Vetores);
+    	enquanto (opcao!=1 ou opcao!=2) faca
+    		escreva("POR FAVOR ESCOLHA UMA OPÇÃO VÁLIDA, (1) Para a calculadora de Matrizes e (2) Para a calculadora de Vetores: ");
+    		leia(opcao);
+    	fimEnquanto
+
+    	// Só chega aqui, caso o usuário passe a inserir de fato uma opção válida (1) ou (2)
+    	escolha (opcao)
+    	caso 1
+        	matrizes();
+        	interrompa;
+    	caso 2
+        	vetores();
+        	interrompa;
+        fimEscolha
 	fimEscolha
 
 fimPrincipal
 
 procedimento matrizes()
-	...
+	escreval("CLACULADORA MATRIZES");
 fimProcedimento
 
 procedimento vetores()
-	...
+	escreval("CALCULADORA VETORES");
 fimProcedimento
