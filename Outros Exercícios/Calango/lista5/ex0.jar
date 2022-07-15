@@ -17,7 +17,13 @@ principal
 
 	inputVetores();
 	quebrarLinha(3);
-	escreval("AAAAAAAAAAA");
+	escreval("AGORA, ESCOLHA A OPERAÇÃO DESEJADA COM OS VETORES:");
+	escreval("(1) Norma dos vetores");
+	escreval("(2) Ângulo entre os vetores");
+	escreval("(3) Produto Interno Euclidiano (Produto Escalar) entre os vetores");
+	escreval("(4) Produto Vetorial entre os vetores");
+	escreva("-->");
+	leia(opcao);
 
 fimPrincipal
 
@@ -60,7 +66,6 @@ funcao texto formatarVetor(real array[], inteiro tamanhoVetor)
 	retorna arrayFormatado;
 fimFuncao
 
-   
 procedimento quebrarLinha(inteiro qtdQuebrasDeLinha)
 	/*
 	 * Recebe um número inteiro e realiza a quebra de linha pela quantidade de vezes especificada
