@@ -83,4 +83,4 @@ funcao texto formatarVetor(inteiro vetor[], inteiro tamanhoVetor)
 	fimPara
 	arrayFormatado = "(" + arrayFormatado + ")";
 	retorna arrayFormatado;
-fimProcedimento
+fimFuncao
