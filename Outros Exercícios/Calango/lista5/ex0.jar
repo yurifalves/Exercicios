@@ -16,6 +16,8 @@ principal
 	escreval("=-=-=-=-=-=-=-=-=-=-=-=-=-");
 
 	inputVetores();
+	quebrarLinha(3);
+	escreval("AAAAAAAAAAA");
 
 fimPrincipal
 
@@ -64,7 +66,7 @@ procedimento quebrarLinha(inteiro qtdQuebrasDeLinha)
 	 * Recebe um número inteiro e realiza a quebra de linha pela quantidade de vezes especificada
 	 */
 	inteiro i;
-	para (i de 0 ate qtdQuebrasDeLinhas-1 passo 1) faca
+	para (i de 0 ate qtdQuebrasDeLinha-1 passo 1) faca
 		escreval("");
 	fimPara
 fimProcedimento
