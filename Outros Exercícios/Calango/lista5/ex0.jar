@@ -11,43 +11,17 @@ principal
 
 	// Instruções
 
-	escreval("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-	escreval(" CALCULADORA ÁLGEBRA LINEAR ");
-	escreval("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+	escreval("=-=-=-=-=-=-=-=-=-=-=-=-=");
+	escreval(" CALCULADORA DE VETORES ");
+	escreval("=-=-=-=-=-=-=-=-=-=-=-=-=");
 
-	escreval("Escolha uma OPÇÃO: ");
-	escreval("(1) Calculadora de Matrizes");
-	escreval("(2) Calculadora de Vetores");
-	escreva("--> ");
-	leia(opcao);
+	inputVetores()
 
-	escreval("");
-
-	escolha (opcao)
-    caso 1
-        matrizes();
-        interrompa;
-    caso 2
-        vetores();
-        interrompa;
-    outroCaso
-    	enquanto (opcao!=1 e opcao!=2) faca
-    		escreva("POR FAVOR ESCOLHA UMA OPÇÃO VÁLIDA, (1) Para a calculadora de Matrizes e (2) Para a calculadora de Vetores: ");
-    		leia(opcao);
-    	fimEnquanto
-
-    	// Só chega aqui, caso o usuário passe a inserir de fato uma opção válida (1) ou (2)
-		se (opcao == 1) entao matrizes(); fimSe
-		se (opcao == 2) entao vetores(); fimSe
 	fimEscolha
 
 fimPrincipal
 
-procedimento matrizes()
-	escreval("CACULADORA MATRIZES");
-fimProcedimento
-
-procedimento vetores()
+procedimento inputVetores()
 	inteiro n;  // número de componentes dos vetores que participarão do cálculo
 	inteiro u[100], v[100];  // Os dois vetores em R^n, u=(u_1, u_2, ..., u_n) e v=(v_1, v_2, ..., v_n), onde 0 ≤ n ≤ 100
 	
@@ -71,9 +45,11 @@ procedimento vetores()
 	
 fimProcedimento
 
-funcao texto formatarVetor(inteiro vetor[], inteiro tamanhoVetor)
-  // Retorna a string "[componente_1, componente_2, ..., componente_n]" correspondente à um vetor em R^n, ou seja, de n componentes
-  
+funcao texto formatarVetor(real array[], inteiro tamanhoVetor)
+  /*
+   Recebe um array e retorna a string equivalente à todas as componentes um vetor em R^n (componente_1, componente_2, ..., componente_n)
+   Ex: {1, 7, -3, -90, 10.3, 2} --> "(1, 7, -3, -90, 10.3, 2)
+  */
 	inteiro i;
 	texto arrayFormatado;
 	arrayFormatado = "";
