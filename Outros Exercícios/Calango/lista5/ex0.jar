@@ -21,7 +21,7 @@ principal
         vetores();
         interrompa;
     outroCaso
-    	enquanto (opcao!=1 ou opcao!=2) faca
+    	enquanto (opcao!=1 e opcao!=2) faca
     		escreva("POR FAVOR ESCOLHA UMA OPÇÃO VÁLIDA, (1) Para a calculadora de Matrizes e (2) Para a calculadora de Vetores: ");
     		leia(opcao);
     	fimEnquanto
