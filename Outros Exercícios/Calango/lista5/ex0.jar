@@ -58,11 +58,11 @@ procedimento vetores()
 	leia(n);
 	escreval("");
 
-	escreval("Insira as", " ", n, " ", "componentes do primeiro vetor");
+	escreval("Insira as", " ", n, " ", "componentes do primeiro vetor: ");
 	para (i de 0 ate n-1 passo 1) faca
 		leia(u[i]);
 	fimPara
-	escreval("Insira as", " ", n, " ", "componentes do primeiro vetor");
+	escreval("Insira as", " ", n, " ", "componentes do segundo vetor: ");
 	para (i de 0 ate n-1 passo 1) faca
 		leia(v[i]);
 	fimPara
@@ -71,7 +71,7 @@ procedimento vetores()
 	
 fimProcedimento
 
-procedimento exibirVetor(inteiro vetor[], inteiro tamanhoVetor)
+funcao texto formatarVetor(inteiro vetor[], inteiro tamanhoVetor)
   // Retorna a string "[componente_1, componente_2, ..., componente_n]" correspondente à um vetor em R^n, ou seja, de n componentes
   
 	inteiro i;
@@ -82,5 +82,5 @@ procedimento exibirVetor(inteiro vetor[], inteiro tamanhoVetor)
 		senao arrayFormatado = arrayFormatado + vetor[i]; fimSe
 	fimPara
 	arrayFormatado = "(" + arrayFormatado + ")";
-	escreval(arrayFormatado);
+	retorna arrayFormatado;
 fimProcedimento
