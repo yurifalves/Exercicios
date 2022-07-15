@@ -66,8 +66,8 @@ procedimento vetores()
 	para (i de 0 ate n-1 passo 1) faca
 		leia(v[i]);
 	fimPara
-	escreval("Os vetores inseridos foram", "u = ", exibirVetor(u, n));
-	escreval("Os vetores inseridos foram", "v = ", exibirVetor(v, n));
+	escreval("Os vetores inseridos foram ", "u = ", formatarVetor(u, n));
+	escreval("Os vetores inseridos foram ", "v = ", formatarVetor(v, n));
 	
 fimProcedimento
 
