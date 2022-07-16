@@ -27,9 +27,10 @@ principal
 	leia(opcao);
 	escolha (opcao)
 		caso 0
-	        inteiro abcd;  // Só para executar os outros de uma vez  
+	        inteiro abcd;  // Só para executar os outros de uma vez
+	        interrompa;  
 	    caso 1
-	        norma();
+	        escreval("Normas: ", "||u|| = ", norma(u, n), " e ", "||v|| = ", norma(v, n));
 	        interrompa;
 	    caso 2
 	        anguloEntreVetores();
@@ -108,4 +109,34 @@ funcao real norma(real vetor[], inteiro tamanhoVetor)
 	fimPara
 	
 	retorna raizQuadrada(somaDosQuadrados);
+fimFuncao
+
+funcao real anguloEntreVetores(real vetor1[], real vetor2[], inteiro tamanhoVetores)
+	/*
+	 * Recebe dois vetores e retorna o ângulo entre esses dois vetores no espaço
+	 * se u = (u_1, u_2, ..., u_n) e v = (v_1, v_2, ..., v_n) forem vetores em R^n, então o Ângulo entre esses dois vetores é θ = arccos(u•v/||u|| ||v||)
+	 */
+	inteiro somaDosQuadrados;
+	inteiro i;
+	somaDosQuadrados = 0;
+	para (i de 0 ate tamanhoVetor-1 passo 1) faca
+		somaDosQuadrados = somaDosQuadrados + exp(vetor[i], 2); 
+	fimPara
+	
+	retorna raizQuadrada(somaDosQuadrados);
+fimFuncao
+
+funcao real produtoInterno(real vetor1[], real vetor2[], inteiro tamanhoVetores)
+	/*
+	 * Recebe dois vetores e retorna o produto interno entre esses dois vetores no espaço
+	 * se u = (u_1, u_2, ..., u_n) e v = (v_1, v_2, ..., v_n) forem vetores em R^n, então o Produto Interno entre esses dois vetores é u•v = ||u|| ||v|| cos(θ) = u_1v_1 + u_2v_2 + ... + u_nv_n
+	 */
+	inteiro produtoInterno;
+	inteiro i;
+	produtoInterno = 0;
+	para (i de 0 ate tamanhoVetor-1 passo 1) faca
+		produtoInterno = produtoInterno + vetor1[i]*vetor2[i];
+	fimPara
+	
+	retorna produtoInterno;
 fimFuncao
