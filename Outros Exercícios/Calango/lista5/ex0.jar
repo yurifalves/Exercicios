@@ -160,3 +160,22 @@ funcao texto produtoVetorial(real vetor1[], real vetor2[])
 	produtoV = "(" + componente1 + ", " + componente2 + ", " + componente3 + ")";
 	retorna produtoV;
 fimFuncao
+
+funcao inteiro fatorial(inteiro num)
+    inteiro fat, i;
+    fat = 1;
+    para (i de num ate 1 passo -1) faca
+        fat = fat*i;
+        i = i - 1;
+    fimPara
+    retorna fat;
+fimFuncao
+
+funcao real cos(real x)
+	inteiro somatorio, i;
+	somatorio = 0;
+	para (i de 0 ate 1000 passo 1) faca
+		somatorio = somatorio + (exp(-1, i)/fatorial(2*i))*exp(x, 2*i);
+	fimPara
+	retorna somatorio;
+fimFuncao
