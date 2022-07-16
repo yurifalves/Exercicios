@@ -39,9 +39,8 @@ principal
 	escreval("AGORA, ESCOLHA A OPERAÇÃO DESEJADA COM OS VETORES:");
 	escreval("(0) Visão geral");
 	escreval("(1) Norma dos vetores");
-	escreval("(2) Ângulo entre os vetores");
-	escreval("(3) Produto Interno Euclidiano (Produto Escalar) entre os vetores");
-	escreval("(4) Produtos Vetoriais entre os vetores");
+	escreval("(2) Produto Interno Euclidiano (Produto Escalar) entre os vetores");
+	escreval("(3) Produtos Vetoriais entre os vetores");
 	escreva("-->");
 	leia(opcao);
 	escolha (opcao)
@@ -54,13 +53,10 @@ principal
 	        escreval("||v|| = ", norma(v, n));
 	        interrompa;
 	    caso 2
-	        escreval(fatorial(4));
-	        interrompa;
-		caso 3
-        	escreval("PRODUTO INTERNO:");
+	        escreval("PRODUTO INTERNO:");
 	        escreval("u•v = ", produtoInterno(u, v, n));
 	        interrompa;
-        caso 4
+		caso 3
         	se (n==3) entao  // O produto vetorial só existe quando ambos os vetores pertencem à R^n
 	        	escreval("PRODUTOS VETORIAIS:");
 	        	escreval("u×v = ", produtoVetorial(u, v));
@@ -116,21 +112,6 @@ funcao real norma(real vetor[], inteiro tamanhoVetor)
 	retorna raizQuadrada(somaDosQuadrados);
 fimFuncao
 
-funcao real anguloEntreVetores(real vetor1[], real vetor2[], inteiro tamanhoVetores)
-	/*
-	 * Recebe dois vetores e retorna o ângulo entre esses dois vetores no espaço
-	 * se u = (u_1, u_2, ..., u_n) e v = (v_1, v_2, ..., v_n) forem vetores em R^n, então o Ângulo entre esses dois vetores é θ = arccos(u•v/||u|| ||v||)
-	 */
-	inteiro somaDosQuadrados;
-	inteiro i;
-	somaDosQuadrados = 0;
-	para (i de 0 ate tamanhoVetores-1 passo 1) faca
-		somaDosQuadrados = somaDosQuadrados + exp(vetor1[i]+vetor2[i], 2); 
-	fimPara
-	
-	retorna raizQuadrada(somaDosQuadrados);
-fimFuncao
-
 funcao real produtoInterno(real vetor1[], real vetor2[], inteiro tamanhoVetores)
 	/*
 	 * Recebe dois vetores e retorna o produto interno entre esses dois vetores no espaço
@@ -159,22 +140,4 @@ funcao texto produtoVetorial(real vetor1[], real vetor2[])
 	
 	produtoV = "(" + componente1 + ", " + componente2 + ", " + componente3 + ")";
 	retorna produtoV;
-fimFuncao
-
-funcao inteiro fatorial(inteiro num)
-    inteiro fat, i;
-    fat = 1;
-    para (i de num ate 1 passo -1) faca
-        fat = fat*i;
-    fimPara
-    retorna fat;
-fimFuncao
-
-funcao real cos(real x)
-	inteiro somatorio, i;
-	somatorio = 0;
-	para (i de 0 ate 1000 passo 1) faca
-		somatorio = somatorio + (exp(-1, i)/fatorial(2*i))*exp(x, 2*i);
-	fimPara
-	retorna somatorio;
 fimFuncao
