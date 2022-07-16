@@ -129,7 +129,7 @@ fimFuncao
 funcao real produtoInterno(real vetor1[], real vetor2[], inteiro tamanhoVetores)
 	/*
 	 * Recebe dois vetores e retorna o produto interno entre esses dois vetores no espaço
-	 * se u = (u_1, u_2, ..., u_n) e v = (v_1, v_2, ..., v_n) forem vetores em R^n, então o Produto Interno entre esses dois vetores é u•v = ||u|| ||v|| cos(θ) = u_1v_1 + u_2v_2 + ... + u_nv_n
+	 * se u = (u_1, u_2, ..., u_n) e v = (v_1, v_2, ..., v_n) forem vetores em R^n, então o Produto Interno entre esses dois vetores é u•v = ||u|| ||v|| cos(θ) = (u_1v_1 + u_2v_2 + ... + u_nv_n)
 	 */
 	inteiro produtoInterno;
 	inteiro i;
@@ -139,4 +139,15 @@ funcao real produtoInterno(real vetor1[], real vetor2[], inteiro tamanhoVetores)
 	fimPara
 	
 	retorna produtoInterno;
+fimFuncao
+
+funcao real produtoVetorial(real vetor1[], real vetor2[], inteiro tamanhoVetores)
+	/*
+	 * Recebe dois vetores e retorna o produto vetorial entre esses dois vetores no espaço
+	 * se u = (u_1, u_2, u_3) e v = (v_1, v_2, v_3) forem vetores em R^3, então o Produto Vetorial entre esses dois vetores é u×v = (u_2v_3-u_3v_2, u_3v_1-u_1v_3, u_1v_2-u_2v_1)
+	 */
+	texto produtoVetorial;
+	
+	produtoVetorial = "(", vetor1[2]*vetor2[3]-vetor1[3]*vetor2[2], ", ", vetor1[3]*vetor2[1]-vetor1[1]*vetor2[3], ", ", vetor1[1]*vetor2[2]-vetor1[2]*vetor2[1], ")";
+	retorna produtoVetorial;
 fimFuncao
