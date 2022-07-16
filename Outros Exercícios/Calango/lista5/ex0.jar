@@ -49,7 +49,9 @@ principal
 	        escreval("caso0");
 	        interrompa;
 	    caso 1
-	        escreval("caso1");
+	        escreval("NORMAS:");
+	        escreval("||u|| = ", norma(u, n));
+	        escreval("||v|| = ", norma(v, n));
 	        interrompa;
 	    caso 2
 	        escreval("caso2");
