@@ -8,7 +8,7 @@ algoritmo Vetores;
 principal
 	// Declarações
 	inteiro n;  // número de componentes dos vetores que participarão do cálculo
-	real u[100], v[100];  // Os dois vetores em R^n, u=(u_1, u_2, ..., u_n) e v=(v_1, v_2, ..., v_n), onde 0 ≤ n ≤ 100
+	real u[100], v[100];  // Os dois vetores em R^n, u=(u_1, u_2, ..., u_n) e v=(v_1, v_2, ..., v_n), onde 1 ≤ n ≤ 100
 	inteiro opcao;
 	inteiro i;
 
