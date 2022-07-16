@@ -58,9 +58,13 @@ principal
         	escreval("caso3");
 	        interrompa;
         caso 4
-        	escreval("PRODUTOS VETORIAIS:");
-        	escreval("u×v = ", produtoVetorial(u, v));
-        	escreval("v×u = ", produtoVetorial(v, u));
+        	se (n==3) entao  // O produto vetorial só existe quando ambos os vetores pertencem à R^n
+	        	escreval("PRODUTOS VETORIAIS:");
+	        	escreval("u×v = ", produtoVetorial(u, v));
+	        	escreval("v×u = ", produtoVetorial(v, u));
+	        senao
+	        	escreval("Os produtos vetoriais u×v e v×u não estão definidos!");
+	        fimSe
 	        interrompa;
 	    outroCaso
 	        escreval("opssssssssss");
