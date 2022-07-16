@@ -19,6 +19,10 @@ principal
 	
 	escreva("Insira o Número de componentes dos vetores: ");
 	leia(n);
+	enquanto (n < 1) faca
+		escreva("NÚMERO DE COMPONENTES INVÁLIDO. Insira algum valor maior ou igual a 1: ");
+		leia(n);
+	fimEnquanto
 	quebrarLinha(1);
 
 	escreval("Insira as", " ", n, " ", "componentes do primeiro vetor: ");
