@@ -1,5 +1,5 @@
 algoritmo Vetores;
-// Calculadora de vetores no Espaço Vetorial Euclidiano R^n
+// Calculadora de vetores, considerando o Espaço Vetorial Euclidiano R^n
 //  Objetivo:  Calcular propriedades relativas entre 2 vetores definidos em R^n
 //  Entrada :  As componentes de cada vetor
 //  Saída   :  O cálculo desejado pelo usuário
@@ -35,7 +35,7 @@ principal
 	escreval("v = ", formatarVetor(v, n));
 
 
-	quebrarLinha(3);
+	quebrarLinha(1);
 	escreval("AGORA, ESCOLHA A OPERAÇÃO DESEJADA COM OS VETORES:");
 	escreval("(0) Visão geral");
 	escreval("(1) Norma dos vetores");
@@ -43,6 +43,7 @@ principal
 	escreval("(3) Produtos Vetoriais entre os vetores");
 	escreva("-->");
 	leia(opcao);
+	quebrarLinha(1);
 	escolha (opcao)
 		caso 0
 	        escreval("NORMAS:");
