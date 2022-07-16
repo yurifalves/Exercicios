@@ -7,15 +7,34 @@ algoritmo Vetores;
 
 principal
 	// Declarações
+	inteiro n;  // número de componentes dos vetores que participarão do cálculo
+	real u[100], v[100];  // Os dois vetores em R^n, u=(u_1, u_2, ..., u_n) e v=(v_1, v_2, ..., v_n), onde 0 ≤ n ≤ 100
 	inteiro opcao;
+	inteiro i;
 
 	// Instruções
-
 	escreval("=-=-=-=-=-=-=-=-=-=-=-=-=-");
 	escreval("  CALCULADORA DE VETORES  ");
 	escreval("=-=-=-=-=-=-=-=-=-=-=-=-=-");
+	
+	escreva("Insira o Número de componentes dos vetores: ");
+	leia(n);
+	quebrarLinha(1);
 
-	inputVetores();
+	escreval("Insira as", " ", n, " ", "componentes do primeiro vetor: ");
+	para (i de 0 ate n-1 passo 1) faca
+		leia(u[i]);
+	fimPara
+	escreval("Insira as", " ", n, " ", "componentes do segundo vetor: ");
+	para (i de 0 ate n-1 passo 1) faca
+		leia(v[i]);
+	fimPara
+	quebrarLinha(2);
+	escreval("Foram identificados os 2 vetores em R^", n);
+	escreval("u = ", formatarVetor(u, n));
+	escreval("v = ", formatarVetor(v, n));
+
+
 	quebrarLinha(3);
 	escreval("AGORA, ESCOLHA A OPERAÇÃO DESEJADA COM OS VETORES:");
 	escreval("(0) Visão geral");
@@ -27,20 +46,20 @@ principal
 	leia(opcao);
 	escolha (opcao)
 		caso 0
-	        inteiro abcd;  // Só para executar os outros de uma vez
-	        interrompa;  
+	        escreval("caso0");
+	        interrompa;
 	    caso 1
-	        escreval("Normas: ", "||u|| = ", norma(u, n), " e ", "||v|| = ", norma(v, n));
+	        escreval("caso1");
 	        interrompa;
 	    caso 2
-	        anguloEntreVetores();
+	        escreval("caso2");
 	        interrompa;
 		caso 3
-        	produtoInterno();
-        	interrompa;
+        	escreval("caso3");
+	        interrompa;
         caso 4
-        	produtoVetorial();
-        	interrompa;
+        	escreval("caso4");
+	        interrompa;
 	    outroCaso
 	        escreval("opssssssssss");
 	fimEscolha
@@ -72,29 +91,6 @@ funcao texto formatarVetor(real array[], inteiro tamanhoVetor)
 	arrayFormatado = "(" + arrayFormatado + ")";
 	retorna arrayFormatado;
 fimFuncao
-
-procedimento inputVetores()
-	inteiro n;  // número de componentes dos vetores que participarão do cálculo
-	real u[100], v[100];  // Os dois vetores em R^n, u=(u_1, u_2, ..., u_n) e v=(v_1, v_2, ..., v_n), onde 0 ≤ n ≤ 100
-	
-	inteiro i;
-	escreva("Insira o Número de componentes dos vetores: ");
-	leia(n);
-	escreval("");
-
-	escreval("Insira as", " ", n, " ", "componentes do primeiro vetor: ");
-	para (i de 0 ate n-1 passo 1) faca
-		leia(u[i]);
-	fimPara
-	escreval("Insira as", " ", n, " ", "componentes do segundo vetor: ");
-	para (i de 0 ate n-1 passo 1) faca
-		leia(v[i]);
-	fimPara
-	escreval("Foram identificados os 2 vetores em R^", n);
-	escreval("u = ", formatarVetor(u, n));
-	escreval("v = ", formatarVetor(v, n));
-	
-fimProcedimento
 
 funcao real norma(real vetor[], inteiro tamanhoVetor)
 	/*
@@ -131,14 +127,14 @@ funcao real produtoInterno(real vetor1[], real vetor2[], inteiro tamanhoVetores)
 	 * Recebe dois vetores e retorna o produto interno entre esses dois vetores no espaço
 	 * se u = (u_1, u_2, ..., u_n) e v = (v_1, v_2, ..., v_n) forem vetores em R^n, então o Produto Interno entre esses dois vetores é u•v = ||u|| ||v|| cos(θ) = (u_1v_1 + u_2v_2 + ... + u_nv_n)
 	 */
-	inteiro produtoInterno;
+	inteiro produtoI;
 	inteiro i;
 	produtoInterno = 0;
 	para (i de 0 ate tamanhoVetor-1 passo 1) faca
-		produtoInterno = produtoInterno + vetor1[i]*vetor2[i];
+		produtoI = produtoI + vetor1[i]*vetor2[i];
 	fimPara
 	
-	retorna produtoInterno;
+	retorna produtoI;
 fimFuncao
 
 funcao real produtoVetorial(real vetor1[], real vetor2[], inteiro tamanhoVetores)
@@ -146,8 +142,12 @@ funcao real produtoVetorial(real vetor1[], real vetor2[], inteiro tamanhoVetores
 	 * Recebe dois vetores e retorna o produto vetorial entre esses dois vetores no espaço
 	 * se u = (u_1, u_2, u_3) e v = (v_1, v_2, v_3) forem vetores em R^3, então o Produto Vetorial entre esses dois vetores é u×v = (u_2v_3-u_3v_2, u_3v_1-u_1v_3, u_1v_2-u_2v_1)
 	 */
-	texto produtoVetorial;
+	real componente1, componente2, componente3;
+	texto produtoV;
+	componente1 = vetor1[2]*vetor2[3]-vetor1[3]*vetor2[2];
+	componente2 = vetor1[3]*vetor2[1]-vetor1[1]*vetor2[3];
+	componente3 = vetor1[1]*vetor2[2]-vetor1[2]*vetor2[1];
 	
-	produtoVetorial = "(", vetor1[2]*vetor2[3]-vetor1[3]*vetor2[2], ", ", vetor1[3]*vetor2[1]-vetor1[1]*vetor2[3], ", ", vetor1[1]*vetor2[2]-vetor1[2]*vetor2[1], ")";
-	retorna produtoVetorial;
+	produtoV = "(" + componente1 + ", " + componente2 + ", " + componente3 + ")";
+	retorna produtoV;
 fimFuncao
