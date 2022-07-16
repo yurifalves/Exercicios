@@ -115,8 +115,8 @@ funcao real anguloEntreVetores(real vetor1[], real vetor2[], inteiro tamanhoVeto
 	inteiro somaDosQuadrados;
 	inteiro i;
 	somaDosQuadrados = 0;
-	para (i de 0 ate tamanhoVetor-1 passo 1) faca
-		somaDosQuadrados = somaDosQuadrados + exp(vetor[i], 2); 
+	para (i de 0 ate tamanhoVetores-1 passo 1) faca
+		somaDosQuadrados = somaDosQuadrados + exp(vetor1[i]+vetor2[i], 2); 
 	fimPara
 	
 	retorna raizQuadrada(somaDosQuadrados);
@@ -130,7 +130,7 @@ funcao real produtoInterno(real vetor1[], real vetor2[], inteiro tamanhoVetores)
 	inteiro produtoI;
 	inteiro i;
 	produtoInterno = 0;
-	para (i de 0 ate tamanhoVetor-1 passo 1) faca
+	para (i de 0 ate tamanhoVetores-1 passo 1) faca
 		produtoI = produtoI + vetor1[i]*vetor2[i];
 	fimPara
 	
