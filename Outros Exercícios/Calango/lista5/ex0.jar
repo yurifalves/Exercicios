@@ -18,14 +18,59 @@ principal
 	inputVetores();
 	quebrarLinha(3);
 	escreval("AGORA, ESCOLHA A OPERAÇÃO DESEJADA COM OS VETORES:");
+	escreval("(0) Visão geral");
 	escreval("(1) Norma dos vetores");
 	escreval("(2) Ângulo entre os vetores");
 	escreval("(3) Produto Interno Euclidiano (Produto Escalar) entre os vetores");
 	escreval("(4) Produto Vetorial entre os vetores");
 	escreva("-->");
 	leia(opcao);
+	escolha (opcao)
+		caso 0
+	        inteiro abcd;  // Só para executar os outros de uma vez  
+	    caso 1
+	        norma();
+	        interrompa;
+	    caso 2
+	        anguloEntreVetores();
+	        interrompa;
+		caso 3
+        	produtoInterno();
+        	interrompa;
+        caso 4
+        	produtoVetorial();
+        	interrompa;
+	    outroCaso
+	        escreval("opssssssssss");
+	fimEscolha
 
 fimPrincipal
+
+procedimento quebrarLinha(inteiro qtdQuebrasDeLinha)
+	/*
+	 * Recebe um número inteiro e realiza a quebra de linha pela quantidade de vezes especificada
+	 */
+	inteiro i;
+	para (i de 0 ate qtdQuebrasDeLinha-1 passo 1) faca
+		escreval("");
+	fimPara
+fimProcedimento
+
+funcao texto formatarVetor(real array[], inteiro tamanhoVetor)
+	/*
+	 * Recebe um array e retorna a string equivalente à todas as componentes um vetor em R^n (componente_1, componente_2, ..., componente_n)
+	 * Ex: {1, 7, -3, -90, 10.3, 2} --> "(1, 7, -3, -90, 10.3, 2)"
+	 */
+	inteiro i;
+	texto arrayFormatado;
+	arrayFormatado = "";
+	para (i de 0 ate tamanhoVetor-1 passo 1) faca
+		se (i!=tamanhoVetor-1) entao arrayFormatado = arrayFormatado + array[i] + ", ";
+		senao arrayFormatado = arrayFormatado + array[i]; fimSe
+	fimPara
+	arrayFormatado = "(" + arrayFormatado + ")";
+	retorna arrayFormatado;
+fimFuncao
 
 procedimento inputVetores()
 	inteiro n;  // número de componentes dos vetores que participarão do cálculo
@@ -50,28 +95,17 @@ procedimento inputVetores()
 	
 fimProcedimento
 
-funcao texto formatarVetor(real array[], inteiro tamanhoVetor)
+funcao real norma(real vetor[], inteiro tamanhoVetor)
 	/*
-	 * Recebe um array e retorna a string equivalente à todas as componentes um vetor em R^n (componente_1, componente_2, ..., componente_n)
-	 * Ex: {1, 7, -3, -90, 10.3, 2} --> "(1, 7, -3, -90, 10.3, 2)
+	 * Recebe um vetor e retorna sua norma
+	 * se u = (u_1, u_2, ..., u_n) for um vetor em R^n, então sua norma é ||u|| = √(u_1)^2+(u_2)^2+...(u_n)^2
 	 */
+	inteiro somaDosQuadrados;
 	inteiro i;
-	texto arrayFormatado;
-	arrayFormatado = "";
+	somaDosQuadrados = 0;
 	para (i de 0 ate tamanhoVetor-1 passo 1) faca
-		se (i!=tamanhoVetor-1) entao arrayFormatado = arrayFormatado + array[i] + ", ";
-		senao arrayFormatado = arrayFormatado + array[i]; fimSe
+		somaDosQuadrados = somaDosQuadrados + exp(vetor[i], 2); 
 	fimPara
-	arrayFormatado = "(" + arrayFormatado + ")";
-	retorna arrayFormatado;
+	
+	retorna raizQuadrada(somaDosQuadrados);
 fimFuncao
-
-procedimento quebrarLinha(inteiro qtdQuebrasDeLinha)
-	/*
-	 * Recebe um número inteiro e realiza a quebra de linha pela quantidade de vezes especificada
-	 */
-	inteiro i;
-	para (i de 0 ate qtdQuebrasDeLinha-1 passo 1) faca
-		escreval("");
-	fimPara
-fimProcedimento
