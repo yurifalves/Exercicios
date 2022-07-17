@@ -56,8 +56,16 @@ principal
 	        escreval("||u|| = ", norma(u, n));
 	        escreval("||v|| = ", norma(v, n));
 
+	        escreval("SOMA:");
+	        escreval("u+v = ", somaVetores(u, v, n));
+
+	        escreval("SUBTRAÇÃO:");
+	        escreval("u-v = ", subtracaoVetores(u, v, n));
+	        escreval("v-u = ", subtracaoVetores(v, u, n));
+
 	        escreval("PRODUTO INTERNO:");
 	        escreval("u•v = ", produtoInterno(u, v, n));
+	        
 			escreval("PRODUTOS VETORIAIS:");
 			se (n==3) entao  // O produto vetorial só existe quando ambos os vetores pertencem à R^n
 	        	escreval("u×v = ", produtoVetorial(u, v));
@@ -69,7 +77,7 @@ principal
 	        interrompa;
 	    caso 1
 	        escreval("SOMA:");
-	        escreval("u+v = v+u = ", somaVetores(u, v, n));
+	        escreval("u+v = ", somaVetores(u, v, n));
 	        interrompa;
 	    caso 2
 	        escreval("SUBTRAÇÃO:");
@@ -95,7 +103,10 @@ principal
 	        fimSe
 	        interrompa;
 	    outroCaso
-	        escreval("opssssssssss");
+	    	faca
+				escreva("OPÇÃO INVÁLIDA. Escolha uma das opções entre 0 e 5: ");
+				leia(opcao);
+			enquanto (opcao!=0 e opcao!=1 e opcao!=2 e opcao!=3 e opcao!=4 e opcao!=5);
 	fimEscolha
 
 fimPrincipal
@@ -176,7 +187,7 @@ funcao real produtoInterno(real vetor1[], real vetor2[], inteiro tamanhoVetores)
 	 * Recebe dois vetores e retorna o produto interno entre esses dois vetores no espaço
 	 * se u = (u_1, u_2, ..., u_n) e v = (v_1, v_2, ..., v_n) forem vetores em R^n, então o Produto Interno entre esses dois vetores é u•v = ||u|| ||v|| cos(θ) = (u_1v_1 + u_2v_2 + ... + u_nv_n)
 	 */
-	inteiro produtoI;
+	real produtoI;
 	inteiro i;
 	produtoI = 0;
 	para (i de 0 ate tamanhoVetores-1 passo 1) faca
@@ -191,12 +202,10 @@ funcao texto produtoVetorial(real vetor1[], real vetor2[])
 	 * Recebe dois vetores e retorna o produto vetorial entre esses dois vetores no espaço
 	 * se u = (u_1, u_2, u_3) e v = (v_1, v_2, v_3) forem vetores em R^3, então o Produto Vetorial entre esses dois vetores é u×v = (u_2v_3-u_3v_2, u_3v_1-u_1v_3, u_1v_2-u_2v_1)
 	 */
-	real componente1, componente2, componente3;
-	texto produtoV;
-	componente1 = vetor1[1]*vetor2[2]-vetor1[2]*vetor2[1];
-	componente2 = vetor1[2]*vetor2[0]-vetor1[0]*vetor2[2];
-	componente3 = vetor1[0]*vetor2[1]-vetor1[1]*vetor2[0];
+	real produtoV[3];
+	produtoV[0] = vetor1[1]*vetor2[2]-vetor1[2]*vetor2[1];
+	produtoV[1] = vetor1[2]*vetor2[0]-vetor1[0]*vetor2[2];
+	produtoV[2] = vetor1[0]*vetor2[1]-vetor1[1]*vetor2[0];
 	
-	produtoV = "(" + componente1 + ", " + componente2 + ", " + componente3 + ")";
-	retorna produtoV;
+	retorna formatarVetor(produtoV, 3);
 fimFuncao
