@@ -42,9 +42,11 @@ principal
 	quebrarLinha(1);
 	escreval("AGORA, ESCOLHA A OPERAÇÃO DESEJADA COM OS VETORES:");
 	escreval("(0) Visão geral");
-	escreval("(1) Norma dos vetores");
-	escreval("(2) Produto Interno Euclidiano (Produto Escalar) entre os vetores");
-	escreval("(3) Produtos Vetoriais entre os vetores");
+	escreval("(1) Soma dos vetores");
+	escreval("(2) Subtração dos vetores");
+	escreval("(3) Norma dos vetores");
+	escreval("(4) Produto Interno Euclidiano (Produto Escalar) entre os vetores");
+	escreval("(5) Produtos Vetoriais entre os vetores");
 	escreva("-->");
 	leia(opcao);
 	quebrarLinha(1);
@@ -66,15 +68,24 @@ principal
 
 	        interrompa;
 	    caso 1
+	        escreval("SOMA:");
+	        escreval("u+v = v+u = ", somaVetores(u, v, n));
+	        interrompa;
+	    caso 2
+	        escreval("SUBTRAÇÃO:");
+	        escreval("u-v = ", subtracaoVetores(u, v, n));
+	        escreval("v-u = ", subtracaoVetores(v, u, n));
+	        interrompa;
+	    caso 3
 	        escreval("NORMAS:");
 	        escreval("||u|| = ", norma(u, n));
 	        escreval("||v|| = ", norma(v, n));
 	        interrompa;
-	    caso 2
+	    caso 4
 	        escreval("PRODUTO INTERNO:");
 	        escreval("u•v = ", produtoInterno(u, v, n));
 	        interrompa;
-		caso 3
+		caso 5
 			escreval("PRODUTOS VETORIAIS:");
         	se (n==3) entao  // O produto vetorial só existe quando ambos os vetores pertencem à R^n
 	        	escreval("u×v = ", produtoVetorial(u, v));
@@ -113,6 +124,36 @@ funcao texto formatarVetor(real array[], inteiro tamanhoVetor)
 	fimPara
 	arrayFormatado = "(" + arrayFormatado + ")";
 	retorna arrayFormatado;
+fimFuncao
+
+funcao texto somaVetores(real vetor1[], real vetor2[], inteiro tamanhoVetores)
+	/*
+	 * Recebe dois vetores e retorna a soma entre esses dois vetores no espaço
+	 * se u = (u_1, u_2, ..., u_n) e v = (v_1, v_2, ..., v_n) forem vetores em R^n, então a soma entre esses dois vetores é u+v = (u_1+v_1, u_2+v_2, ..., u_n+v_n)
+	 */
+	real somaV[100];
+	inteiro i;
+	
+	para (i de 0 ate tamanhoVetores-1 passo 1) faca
+		somaV[i] = vetor1[i]+vetor2[i];
+	fimPara
+	
+	retorna formatarVetor(somaV, tamanhoVetores);
+fimFuncao
+
+funcao texto subtracaoVetores(real vetor1[], real vetor2[], inteiro tamanhoVetores)
+	/*
+	 * Recebe dois vetores e retorna a subtracao entre esses dois vetores no espaço
+	 * se u = (u_1, u_2, ..., u_n) e v = (v_1, v_2, ..., v_n) forem vetores em R^n, então a subtracao entre esses dois vetores é u-v = (u_1-v_1, u_2-v_2, ..., u_n-v_n)
+	 */
+	real subtracaoV[100];
+	inteiro i;
+	
+	para (i de 0 ate tamanhoVetores-1 passo 1) faca
+		subtracaoV[i] = vetor1[i]-vetor2[i];
+	fimPara
+	
+	retorna formatarVetor(subtracaoV, tamanhoVetores);
 fimFuncao
 
 funcao real norma(real vetor[], inteiro tamanhoVetor)
