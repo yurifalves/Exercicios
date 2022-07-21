@@ -10,7 +10,7 @@ int main() {
     scanf("%f", &P2[0]);
     scanf("%f", &P2[1]);
 
-    printf("%.4f", distanciaPontos(P1, P2));
+    printf("%.4f\n", distanciaPontos(P1, P2));
 
     return 0;
 }
