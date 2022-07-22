@@ -1,6 +1,6 @@
 algoritmo Vetores;
-// Calculadora de vetores, considerando o Espaço Vetorial Euclidiano R^n
-//  Objetivo:  Calcular propriedades relativas entre 2 vetores definidos em R^n
+// Síntese
+//  Objetivo:  Calcular propriedades relativas de 2 vetores no Espaço Vetorial Euclidiano R^n
 //  Entrada :  As componentes de cada vetor
 //  Saída   :  O cálculo desejado pelo usuário
 
@@ -194,7 +194,7 @@ fimProcedimento
 
 funcao texto formatarVetor(real array[], inteiro tamanhoVetor)
 	/*
-	 * Recebe um array e retorna a string equivalente à todas as componentes um vetor em R^n (componente_1, componente_2, ..., componente_n)
+	 * Recebe um array e retorna o texto equivalente à todas as componentes um vetor em R^n (componente_1, componente_2, ..., componente_n)
 	 * Ex: {1, 7, -3, -90, 10.3, 2} --> "(1, 7, -3, -90, 10.3, 2)"
 	 */
 	inteiro i;
