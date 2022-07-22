@@ -48,7 +48,14 @@ principal
 	escreval("(4) Produto Interno Euclidiano (Produto Escalar) entre os vetores");
 	escreval("(5) Produtos Vetoriais entre os vetores");
 	escreva("-->");
-	leia(opcao);
+	leia(opcao);  // Aqui a opção selecionada pode ser um número de 0 a 5, mas não é garantido
+
+	enquanto (opcao!=0 e opcao!=1 e opcao!=2 e opcao!=3 e opcao!=4 e opcao!=5) faca
+		escreva("OPÇÃO INVÁLIDA. Escolha uma das opções entre 0 e 5: ");
+		leia(opcao);
+	fimEnquanto
+
+	// Aqui finalmente a opcao selecionada é um numero de 0 a 5	
 	escolha (opcao)
 		caso 0
 			quebrarLinha(1);
@@ -107,77 +114,6 @@ principal
 	        	escreval("Os produtos vetoriais u×v e v×u não estão definidos!");
 	        fimSe
 	        interrompa;
-	    outroCaso
-	    	quebrarLinha(1);
-	    	faca
-				escreva("OPÇÃO INVÁLIDA. Escolha uma das opções entre 0 e 5: ");
-				leia(opcao);
-			enquanto (opcao!=0 e opcao!=1 e opcao!=2 e opcao!=3 e opcao!=4 e opcao!=5);
-
-			// Agora finalmente a opcao selecionada é um numero de 0 a 5
-			
-			se (opcao == 0) entao
-				quebrarLinha(1);
-		        escreval("SOMA:");
-		        escreval("u+v = ", somaVetores(u, v, n));
-	
-		        escreval("SUBTRAÇÃO:");
-		        escreval("u-v = ", subtracaoVetores(u, v, n));
-		        escreval("v-u = ", subtracaoVetores(v, u, n));
-
-		        escreval("NORMAS:");
-		        escreval("||u|| = ", norma(u, n));
-		        escreval("||v|| = ", norma(v, n));
-	
-		        escreval("PRODUTO INTERNO:");
-		        escreval("u•v = ", produtoInterno(u, v, n));
-		        
-				escreval("PRODUTOS VETORIAIS:");
-				se (n==3) entao  // O produto vetorial só existe quando ambos os vetores pertencem à R^n
-		        	escreval("u×v = ", produtoVetorial(u, v));
-		        	escreval("v×u = ", produtoVetorial(v, u));
-		        senao
-		        	escreval("Os produtos vetoriais u×v e v×u não estão definidos!");
-		        fimSe
-			fimSe
-
-			se (opcao == 1) entao
-				quebrarLinha(1);
-				escreval("SOMA:");
-	        	escreval("u+v = ", somaVetores(u, v, n));
-			fimSe
-
-			se (opcao == 2) entao
-				quebrarLinha(1);
-				escreval("SUBTRAÇÃO:");
-	        	escreval("u-v = ", subtracaoVetores(u, v, n));
-	        	escreval("v-u = ", subtracaoVetores(v, u, n));
-			fimSe
-
-			se (opcao == 3) entao
-				quebrarLinha(1);
-				escreval("NORMAS:");
-	        	escreval("||u|| = ", norma(u, n));
-	        	escreval("||v|| = ", norma(v, n));
-			fimSe
-
-			se (opcao == 4) entao
-				quebrarLinha(1);
-				escreval("PRODUTO INTERNO:");
-		        escreval("u•v = ", produtoInterno(u, v, n));
-			fimSe
-
-			se (opcao == 5) entao
-				quebrarLinha(1);
-				escreval("PRODUTOS VETORIAIS:");
-				se (n==3) entao  // O produto vetorial só existe quando ambos os vetores pertencem à R^n
-		        	escreval("u×v = ", produtoVetorial(u, v));
-		        	escreval("v×u = ", produtoVetorial(v, u));
-		        senao
-		        	escreval("Os produtos vetoriais u×v e v×u não estão definidos!");
-		        fimSe
-			fimSe
-			
 	fimEscolha
 
 fimPrincipal
