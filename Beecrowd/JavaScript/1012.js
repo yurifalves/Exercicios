@@ -19,7 +19,7 @@ function areaTriangulo(base, altura) {
 
 function areaCirculo(raio) {
     const pi = 3.14159;
-    return pi*Math.pow(raio, 2);
+    return pi*raio**2;
 }
 
 function areaTrapezio(base1, base2, altura) {
