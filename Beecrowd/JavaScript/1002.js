@@ -3,7 +3,7 @@ var lines = input.split('\n');
 
 function areaCircunferencia(raio) {
     const pi = 3.14159;
-    return pi * Math.pow(raio, 2);
+    return pi * raio**2;
 }
 
 const raio = parseFloat(lines.shift());
