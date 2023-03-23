@@ -4,5 +4,6 @@ const myList = [
   'cccc',
   'dddd',
   'eeee',
-  'ffff'
+  'ffff',
+  'gggg'
  ];
